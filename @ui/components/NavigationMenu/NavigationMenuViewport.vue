@@ -19,7 +19,7 @@ import {
   watch,
 } from 'vue'
 import { useResizeObserver } from '@vueuse/core'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 import { getOpenState, whenMouse } from './utils'
 import {
   Primitive,

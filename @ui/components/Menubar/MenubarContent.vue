@@ -8,7 +8,7 @@ export interface MenubarContentProps extends MenuContentProps {}
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { injectMenubarRootContext } from './MenubarRoot.vue'
+import { injectMenubarRootContext } from './Menubar.vue'
 import { injectMenubarMenuContext } from './MenubarMenu.vue'
 import { MenuContent } from '../Menu'
 // import { useCollection, useForwardExpose, useForwardPropsEmits, useId } from '../../shared'
@@ -24,7 +24,7 @@ useForwardExpose()
 const rootContext = injectMenubarRootContext()
 const menuContext = injectMenubarMenuContext()
 
-menuContext.contentId ||= useUId(undefined, 'radix-vue-menubar-content')
+menuContext.contentId ||= useUId(undefined, 'ui-menubar-content')
 
 const { injectCollection } = useCollection('menubar')
 const collections = injectCollection()

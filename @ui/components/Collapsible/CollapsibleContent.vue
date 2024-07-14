@@ -27,7 +27,7 @@ defineOptions({
 const props = defineProps<CollapsibleContentProps>()
 
 const rootContext = injectCollapsibleRootContext()
-rootContext.contentId ||= useUId(undefined, 'collapsible-content')
+rootContext.contentId ||= useUId(undefined, 'ui-collapsible-content')
 
 const presentRef = ref<InstanceType<typeof Presence>>()
 const { forwardRef, currentElement } = useForwardExpose()

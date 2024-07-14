@@ -1,14 +1,17 @@
 <script setup lang="ts">
+const navbar = useNavbar()
 </script>
 
 <template>
-  <header>Header</header>
-  <nav>Nav</nav>
-  <LazyLayoutAside />
-  <main>
-    <slot />
-  </main>
-  <footer>Footer</footer>
+  <div :class="[
+      `grid min-h-dvh md:grid-cols-[auto_1fr] grid-rows-[4rem_auto] [grid-template-areas:'aside_header''aside_main']`,
+    ]">
+    <LazyLayoutHeader class="[grid-area:header] col-span-2" />
+    <LazyLayoutAside class="[grid-area:aside]" />
+    <main class="[grid-area:main] bg-foreground/[0.05] p-4">
+      <slot />
+    </main>
+  </div>
 </template>
 
 <style scoped>

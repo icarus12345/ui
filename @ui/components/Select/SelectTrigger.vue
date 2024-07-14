@@ -25,7 +25,7 @@ const isDisabled = computed(() => rootContext.disabled?.value || props.disabled)
 
 const { forwardRef, currentElement: triggerElement } = useForwardExpose()
 
-rootContext.contentId ||= useUId(undefined, 'radix-vue-select-content')
+rootContext.contentId ||= useUId(undefined, 'ui-select-content')
 onMounted(() => {
   rootContext.triggerElement = triggerElement
 })

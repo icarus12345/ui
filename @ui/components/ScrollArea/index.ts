@@ -18,3 +18,6 @@ export {
   default as ScrollAreaCorner,
   type ScrollAreaCornerProps,
 } from './ScrollAreaCorner.vue'
+export {
+  default as ScrollArea,
+} from './ScrollArea.vue'

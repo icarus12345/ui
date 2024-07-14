@@ -53,7 +53,7 @@ const { forwardRef, currentElement } = useForwardExpose()
 const isSelected = computed(() => rootContext.modelValue?.value === props.value)
 const isFocused = ref(false)
 const textValue = ref(props.textValue ?? '')
-const textId = useUId(undefined, 'radix-vue-select-item-text')
+const textId = useUId(undefined, 'ui-select-item-text')
 
 async function handleSelect(ev?: PointerEvent) {
   await nextTick()

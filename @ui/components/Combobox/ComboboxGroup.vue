@@ -21,7 +21,7 @@ import { Primitive } from '../Primitive'
 const props = defineProps<ComboboxGroupProps>()
 
 const { currentRef, currentElement } = useForwardExpose()
-const id = useUId(undefined, 'combobox-group')
+const id = useUId(undefined, 'ui-combobox-group')
 
 const rootContext = injectComboboxRootContext()
 const hasOptions = ref(false)

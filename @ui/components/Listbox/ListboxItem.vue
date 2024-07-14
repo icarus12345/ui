@@ -38,7 +38,7 @@ const props = withDefaults(defineProps<ListboxItemProps>(), {
 const emits = defineEmits<ListboxItemEmits>()
 
 const { forwardRef, currentElement } = useForwardExpose()
-const id = useUId(undefined, 'radix-vue-listbox-item')
+const id = useUId(undefined, 'ui-listbox-item')
 const rootContext = injectListboxRootContext()
 
 const isHighlighted = computed(() => currentElement.value === rootContext.highlightedElement.value)

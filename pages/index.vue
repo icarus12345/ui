@@ -155,6 +155,7 @@ function handleClick() {
         </LazyDialogContent>
       </LazyDialogPortal>
     </LazyDialogRoot>
+    <div class="h-[50dvh]"></div>
     <LazyAccordionRoot
       class="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
       default-value="item-1"

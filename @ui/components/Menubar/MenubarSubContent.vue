@@ -10,7 +10,7 @@ export interface MenubarSubContentProps extends MenuSubContentProps {}
 </script>
 
 <script setup lang="ts">
-import { injectMenubarRootContext } from './MenubarRoot.vue'
+import { injectMenubarRootContext } from './Menubar.vue'
 import { injectMenubarMenuContext } from './MenubarMenu.vue'
 import { MenuSubContent } from '../Menu'
 // import { useCollection, useForwardExpose, useForwardPropsEmits } from '../../shared'

@@ -56,7 +56,7 @@ const {
   panelGroupElement,
 } = panelGroupContext
 
-const resizeHandleId = useUId(props.id, 'radix-vue-splitter-resize-handle')
+const resizeHandleId = useUId(props.id, 'ui-splitter-resize-handle')
 const state = ref<ResizeHandlerState>('inactive')
 const isFocused = ref(false)
 const resizeHandler = ref<ResizeHandler | null>(null)

@@ -16,6 +16,8 @@ onMounted(() => {
     rootContext.onScrollbarXChange(scrollbarElement.value)
 })
 const sizes = computed(() => scrollbarVisibleContext.sizes.value)
+
+
 </script>
 
 <template>

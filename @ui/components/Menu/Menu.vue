@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { Ref } from 'vue'
 import type { Direction } from './utils'
-import { createContext, useDirection } from '../../shared'
+// import { createContext, useDirection } from '../../shared'
 
 export interface MenuContext {
   open: Ref<boolean>

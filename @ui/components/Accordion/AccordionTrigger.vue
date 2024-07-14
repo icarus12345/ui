@@ -16,7 +16,7 @@ const props = defineProps<AccordionTriggerProps>()
 const rootContext = injectAccordionRootContext()
 const itemContext = injectAccordionItemContext()
 
-itemContext.triggerId ||= useUId(undefined, 'accordion-trigger')
+itemContext.triggerId ||= useUId(undefined, 'ui-accordion-trigger')
 function changeItem() {
   if (itemContext.disabled.value)
     return

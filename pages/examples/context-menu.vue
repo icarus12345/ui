@@ -10,7 +10,7 @@ function handleClick() {
 </script>
 
 <template>
-  <ContextMenuRoot>
+  <ContextMenu>
     <ContextMenuTrigger
       as-child
       class="block border-2 border-white border-dashed text-white rounded text-[15px] select-none py-[45px] w-[300px] text-center"
@@ -284,5 +284,5 @@ function handleClick() {
         </ContextMenuRadioGroup>
       </ContextMenuContent>
     </ContextMenuPortal>
-  </ContextMenuRoot>
+  </ContextMenu>
 </template>

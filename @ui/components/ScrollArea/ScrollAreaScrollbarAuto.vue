@@ -11,7 +11,7 @@ import { injectScrollAreaRootContext } from './ScrollAreaRoot.vue'
 import { injectScrollAreaScrollbarContext } from './ScrollAreaScrollbar.vue'
 import ScrollAreaScrollbarVisible from './ScrollAreaScrollbarVisible.vue'
 import { Presence } from '../Presence'
-import { useForwardExpose } from '../../shared'
+// import { useForwardExpose } from '../../shared'
 
 defineProps<ScrollAreaScrollbarAutoProps>()
 

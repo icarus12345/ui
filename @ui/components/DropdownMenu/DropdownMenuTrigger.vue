@@ -10,7 +10,7 @@ export interface DropdownMenuTriggerProps extends PrimitiveProps {
 
 <script setup lang="ts">
 import { nextTick, onMounted } from 'vue'
-import { injectDropdownMenuRootContext } from './DropdownMenuRoot.vue'
+import { injectDropdownMenuRootContext } from './DropdownMenu.vue'
 import {
   Primitive,
 } from '../Primitive'
@@ -28,7 +28,7 @@ onMounted(() => {
   rootContext.triggerElement = triggerElement
 })
 
-rootContext.triggerId ||= useUId(undefined, 'radix-vue-dropdown-menu-trigger')
+rootContext.triggerId ||= useUId(undefined, 'ui-dropdown-menu-trigger')
 </script>
 
 <template>

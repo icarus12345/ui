@@ -21,10 +21,10 @@ export {
   type NavigationMenuListProps,
 } from './NavigationMenuList.vue'
 export {
-  default as NavigationMenuRoot,
-  type NavigationMenuRootProps,
-  type NavigationMenuRootEmits,
-} from './NavigationMenuRoot.vue'
+  default as NavigationMenu,
+  type NavigationMenuProps,
+  type NavigationMenuEmits,
+} from './NavigationMenu.vue'
 export {
   default as NavigationMenuSub,
   type NavigationMenuSubProps,

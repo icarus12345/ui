@@ -13,7 +13,7 @@ export interface NavigationMenuIndicatorProps extends PrimitiveProps {
 <script setup lang="ts">
 import { computed, ref, watchEffect } from 'vue'
 import { useResizeObserver } from '@vueuse/core'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 // import { useCollection, useForwardExpose } from '../../shared'
 import { Primitive } from '../Primitive'
 import { Presence } from '../Presence'

@@ -1,8 +1,8 @@
 export {
-  default as MenubarRoot,
-  type MenubarRootProps,
-  type MenubarRootEmits,
-} from './MenubarRoot.vue'
+  default as Menubar,
+  type MenubarProps,
+  type MenubarEmits,
+} from './Menubar.vue'
 export {
   default as MenubarTrigger,
   type MenubarTriggerProps,

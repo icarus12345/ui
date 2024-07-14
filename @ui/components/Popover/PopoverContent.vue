@@ -30,7 +30,7 @@ const rootContext = injectPopoverRootContext()
 const forwarded = useForwardPropsEmits(props, emits)
 const { forwardRef } = useForwardExpose()
 
-rootContext.contentId ||= useUId(undefined, 'radix-vue-popover-content')
+rootContext.contentId ||= useUId(undefined, 'ui-popover-content')
 </script>
 
 <template>

@@ -33,10 +33,10 @@ export {
   type MenuRadioItemEmits,
 } from './MenuRadioItem.vue'
 export {
-  default as MenuRoot,
+  default as Menu,
   type MenuProps,
   type MenuEmits,
-} from './MenuRoot.vue'
+} from './Menu.vue'
 export {
   default as MenuSeparator,
   type MenuSeparatorProps,

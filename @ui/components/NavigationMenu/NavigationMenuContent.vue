@@ -14,7 +14,7 @@ export interface NavigationMenuContentProps extends NavigationMenuContentImplPro
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 import { injectNavigationMenuItemContext } from './NavigationMenuItem.vue'
 import { getOpenState, whenMouse } from './utils'
 import { Presence } from '../Presence'

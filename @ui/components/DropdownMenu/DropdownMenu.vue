@@ -28,7 +28,7 @@ export const [injectDropdownMenuRootContext, provideDropdownMenuRootContext]
 <script setup lang="ts">
 import { ref, toRefs } from 'vue'
 import { useVModel } from '@vueuse/core'
-import { MenuRoot } from '../Menu'
+import { Menu } from '../Menu'
 
 const props = withDefaults(defineProps<DropdownMenuRootProps>(), {
   modal: true,
@@ -70,11 +70,11 @@ provideDropdownMenuRootContext({
 </script>
 
 <template>
-  <MenuRoot
+  <Menu
     v-model:open="open"
     :dir="dir"
     :modal="modal"
   >
     <slot :open="open" />
-  </MenuRoot>
+  </Menu>
 </template>

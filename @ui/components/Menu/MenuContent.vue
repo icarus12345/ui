@@ -16,9 +16,9 @@ export interface MenuContentProps extends MenuRootContentTypeProps {
 </script>
 
 <script setup lang="ts">
-import MenuRootContentModal from './MenuRootContentModal.vue'
-import MenuRootContentNonModal from './MenuRootContentNonModal.vue'
-import { injectMenuContext, injectMenuRootContext } from './MenuRoot.vue'
+import MenuContentModal from './MenuContentModal.vue'
+import MenuContentNonModal from './MenuContentNonModal.vue'
+import { injectMenuContext, injectMenuRootContext } from './Menu.vue'
 import { Presence } from '../Presence'
 import { useForwardPropsEmits } from '../../composables/useForwardPropsEmits'
 
@@ -32,17 +32,17 @@ const rootContext = injectMenuRootContext()
 
 <template>
   <Presence :present="forceMount || menuContext.open.value">
-    <MenuRootContentModal
+    <MenuContentModal
       v-if="rootContext.modal.value"
       v-bind="{ ...$attrs, ...forwarded }"
     >
       <slot />
-    </MenuRootContentModal>
-    <MenuRootContentNonModal
+    </MenuContentModal>
+    <MenuContentNonModal
       v-else
       v-bind="{ ...$attrs, ...forwarded }"
     >
       <slot />
-    </MenuRootContentNonModal>
+    </MenuContentNonModal>
   </Presence>
 </template>

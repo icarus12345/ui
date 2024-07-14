@@ -15,7 +15,7 @@ export interface NavigationMenuContentImplProps extends DismissableLayerProps {}
 
 <script setup lang="ts">
 import { computed, ref, watchEffect } from 'vue'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 import {
   EVENT_ROOT_CONTENT_DISMISS,
   focusFirst,

@@ -1,8 +1,8 @@
 export {
-  default as DropdownMenuRoot,
-  type DropdownMenuRootProps,
-  type DropdownMenuRootEmits,
-} from './DropdownMenuRoot.vue'
+  default as DropdownMenu,
+  type DropdownMenuProps,
+  type DropdownMenuEmits,
+} from './DropdownMenu.vue'
 export {
   default as DropdownMenuTrigger,
   type DropdownMenuTriggerProps,
@@ -70,3 +70,6 @@ export {
   default as DropdownMenuSubTrigger,
   type DropdownMenuSubTriggerProps,
 } from './DropdownMenuSubTrigger.vue'
+export {
+  default as DropdownMenu,
+} from './DropdownMenu.vue'

@@ -10,7 +10,7 @@ export interface MenubarTriggerProps extends PrimitiveProps {
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { injectMenubarRootContext } from './MenubarRoot.vue'
+import { injectMenubarRootContext } from './Menubar.vue'
 import { injectMenubarMenuContext } from './MenubarMenu.vue'
 import {
   Primitive,

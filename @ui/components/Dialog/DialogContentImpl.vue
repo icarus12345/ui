@@ -47,8 +47,8 @@ const emits = defineEmits<DialogContentImplEmits>()
 const rootContext = injectDialogRootContext()
 const { forwardRef, currentElement: contentElement } = useForwardExpose()
 
-rootContext.titleId ||= useUId(undefined, 'dialog-title')
-rootContext.descriptionId ||= useUId(undefined, 'dialog-description')
+rootContext.titleId ||= useUId(undefined, 'ui-dialog-title')
+rootContext.descriptionId ||= useUId(undefined, 'ui-dialog-description')
 
 onMounted(() => {
   rootContext.contentElement = contentElement

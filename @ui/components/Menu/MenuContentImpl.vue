@@ -91,7 +91,7 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import { injectMenuContext, injectMenuRootContext } from './MenuRoot.vue'
+import { injectMenuContext, injectMenuRootContext } from './Menu.vue'
 import {
   FIRST_LAST_KEYS,
   LAST_KEYS,

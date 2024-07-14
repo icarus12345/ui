@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<TooltipTriggerProps>(), {
 const rootContext = injectTooltipRootContext()
 const providerContext = injectTooltipProviderContext()
 
-rootContext.contentId ||= useUId(undefined, 'radix-vue-tooltip-content')
+rootContext.contentId ||= useUId(undefined, 'ui-tooltip-content')
 
 const { forwardRef, currentElement: triggerElement } = useForwardExpose()
 

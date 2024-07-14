@@ -12,7 +12,7 @@ export interface NavigationMenuTriggerProps extends PrimitiveProps {
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { refAutoReset, unrefElement } from '@vueuse/core'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 import { injectNavigationMenuItemContext } from './NavigationMenuItem.vue'
 import { getOpenState, makeContentId, makeTriggerId } from './utils'
 import {

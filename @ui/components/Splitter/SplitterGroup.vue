@@ -111,7 +111,7 @@ const debounceMap: {
   [key: string]: typeof savePanelGroupState
 } = {}
 
-const groupId = useUId(props.id, 'radix-vue-splitter-group')
+const groupId = useUId(props.id, 'ui-splitter-group')
 const dir = useDirection()
 const { forwardRef, currentElement: panelGroupElementRef } = useForwardExpose()
 

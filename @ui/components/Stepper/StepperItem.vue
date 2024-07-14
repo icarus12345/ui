@@ -48,8 +48,8 @@ const { forwardRef } = useForwardExpose()
 
 const rootContext = injectStepperRootContext()
 
-const titleId = useUId(undefined, 'radix-vue-stepper-item-title')
-const descriptionId = useUId(undefined, 'radix-vue-stepper-item-description')
+const titleId = useUId(undefined, 'ui-stepper-item-title')
+const descriptionId = useUId(undefined, 'ui-stepper-item-description')
 
 const itemState = computed(() => {
   if (completed.value)

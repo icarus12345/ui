@@ -24,7 +24,7 @@ const { forwardRef } = useForwardExpose()
 
 const rootContext = injectComboboxRootContext()
 
-rootContext.contentId ||= useUId(undefined, 'combobox-content')
+rootContext.contentId ||= useUId(undefined, 'ui-combobox-content')
 </script>
 
 <template>

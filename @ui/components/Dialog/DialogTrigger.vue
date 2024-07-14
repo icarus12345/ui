@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<DialogTriggerProps>(), {
 const rootContext = injectDialogRootContext()
 const { forwardRef, currentElement } = useForwardExpose()
 
-rootContext.contentId ||= useUId(undefined, 'dialog-content')
+rootContext.contentId ||= useUId(undefined, 'ui-dialog-content')
 onMounted(() => {
   rootContext.triggerElement.value = currentElement.value
 })

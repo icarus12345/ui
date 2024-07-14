@@ -8,7 +8,7 @@ export interface MenuSubTriggerProps extends MenuItemImplProps {}
 <script setup lang="ts">
 import { type ComponentPublicInstance, nextTick, onUnmounted, ref } from 'vue'
 import MenuItemImpl from './MenuItemImpl.vue'
-import { injectMenuContext, injectMenuRootContext } from './MenuRoot.vue'
+import { injectMenuContext, injectMenuRootContext } from './Menu.vue'
 import { injectMenuSubContext } from './MenuSub.vue'
 import { injectMenuContentContext } from './MenuContentImpl.vue'
 // import { useId } from '../../shared'
@@ -24,7 +24,7 @@ const contentContext = injectMenuContentContext()
 
 const openTimerRef = ref<number | null>(null)
 
-subContext.triggerId ||= useUId(undefined, 'menu-sub-trigger')
+subContext.triggerId ||= useUId(undefined, 'ui-menu-sub-trigger')
 
 function clearOpenTimer() {
   if (openTimerRef.value)

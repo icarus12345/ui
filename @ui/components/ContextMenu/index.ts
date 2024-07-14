@@ -1,8 +1,8 @@
 export {
-  default as ContextMenuRoot,
-  type ContextMenuRootProps,
-  type ContextMenuRootEmits,
-} from './ContextMenuRoot.vue'
+  default as ContextMenu,
+  type ContextMenuProps,
+  type ContextMenuEmits,
+} from './ContextMenu.vue'
 export {
   default as ContextMenuTrigger,
   type ContextMenuTriggerProps,

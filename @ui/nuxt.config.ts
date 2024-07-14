@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   components: [
     { 
       path: '@ui/components',
-      ignore: ['**/index.ts', '**/type.ts']
+      ignore: ['**/index.ts', '**/type.ts', '**/types.ts']
     }
   ],
   modules: [

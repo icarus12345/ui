@@ -7,7 +7,7 @@ export interface NavigationMenuListProps extends PrimitiveProps {}
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { injectNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext } from './NavigationMenu.vue'
 import {
   Primitive,
 } from '../Primitive'

@@ -10,7 +10,7 @@ function handleClick() {
 </script>
 
 <template>
-  <MenubarRoot
+  <Menubar
     v-model="currentMenu"
     class="flex bg-white p-[3px] rounded-md shadow-[0_2px_10px] shadow-blackA7"
   >
@@ -307,5 +307,5 @@ function handleClick() {
         </MenubarContent>
       </MenubarPortal>
     </MenubarMenu>
-  </MenubarRoot>
+  </Menubar>
 </template>

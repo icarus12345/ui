@@ -58,8 +58,8 @@ const isSelected = computed(() =>
 )
 
 const isFocused = computed(() => isEqual(rootContext.selectedValue.value, props.value))
-const textId = useUId(undefined, 'combobox-item')
-const optionId = useUId(undefined, 'combobox-option')
+const textId = useUId(undefined, 'ui-combobox-item')
+const optionId = useUId(undefined, 'ui-combobox-option')
 
 const isInOption = computed(() =>
   rootContext.isUserInputted.value

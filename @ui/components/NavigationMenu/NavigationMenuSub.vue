@@ -25,7 +25,7 @@ export interface NavigationMenuSubProps extends PrimitiveProps {
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useVModel } from '@vueuse/core'
-import { injectNavigationMenuContext, provideNavigationMenuContext } from './NavigationMenuRoot.vue'
+import { injectNavigationMenuContext, provideNavigationMenuContext } from './NavigationMenu.vue'
 import {
   Primitive,
 } from '../Primitive'

@@ -4,39 +4,39 @@ import type { Direction } from '@ui/types'
 // import { createContext, useDirection, useForwardExpose } from '../../shared'
 import type { MenuEmits, MenuProps } from '../Menu'
 
-type ContextMenuRootContext = {
+type ContextMenuContext = {
   open: Ref<boolean>
   onOpenChange: (open: boolean) => void
   modal: Ref<boolean>
   dir: Ref<Direction>
 }
 
-export interface ContextMenuRootProps extends Omit<MenuProps, 'open'> {}
-export type ContextMenuRootEmits = MenuEmits
+export interface ContextMenuProps extends Omit<MenuProps, 'open'> {}
+export type ContextMenuEmits = MenuEmits
 
-export const [injectContextMenuRootContext, provideContextMenuRootContext]
-  = createContext<ContextMenuRootContext>('ContextMenuRoot')
+export const [injectContextMenuContext, provideContextMenuContext]
+  = createContext<ContextMenuContext>('ContextMenu')
 </script>
 
 <script setup lang="ts">
 import { ref, toRefs, watch } from 'vue'
-import { MenuRoot } from '../Menu'
+import { Menu } from '../Menu'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<ContextMenuRootProps>(), {
+const props = withDefaults(defineProps<ContextMenuProps>(), {
   modal: true,
 })
-const emits = defineEmits<ContextMenuRootEmits>()
+const emits = defineEmits<ContextMenuEmits>()
 const { dir: propDir, modal } = toRefs(props)
 useForwardExpose()
 const dir = useDirection(propDir)
 
 const open = ref(false)
 
-provideContextMenuRootContext({
+provideContextMenuContext({
   open,
   onOpenChange: (value: boolean) => {
     open.value = value
@@ -51,11 +51,11 @@ watch(open, (value) => {
 </script>
 
 <template>
-  <MenuRoot
+  <Menu
     v-model:open="open"
     :dir="dir"
     :modal="modal"
   >
     <slot />
-  </MenuRoot>
+  </Menu>
 </template>

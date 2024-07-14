@@ -14,7 +14,7 @@ export interface ContextMenuTriggerProps extends PrimitiveProps {
 
 <script setup lang="ts">
 import { computed, nextTick, ref, toRefs } from 'vue'
-import { injectContextMenuRootContext } from './ContextMenuRoot.vue'
+import { injectContextMenuContext } from './ContextMenu.vue'
 import { isTouchOrPen } from './utils'
 // import { useForwardExpose } from '../../shared'
 import { Primitive } from '../Primitive'
@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<ContextMenuTriggerProps>(), {
 const { disabled } = toRefs(props)
 
 const { forwardRef } = useForwardExpose()
-const rootContext = injectContextMenuRootContext()
+const context = injectContextMenuContext()
 const point = ref<Point>({ x: 0, y: 0 })
 const virtualEl = computed(() => ({
   getBoundingClientRect: () =>
@@ -53,7 +53,7 @@ function clearLongPress() {
 
 function handleOpen(event: MouseEvent | PointerEvent) {
   point.value = { x: event.clientX, y: event.clientY }
-  rootContext.onOpenChange(true)
+  context.onOpenChange(true)
 }
 
 async function handleContextMenu(event: PointerEvent) {
@@ -98,7 +98,7 @@ async function handlePointerEvent(event: PointerEvent) {
     :ref="forwardRef"
     :as="as"
     :as-child="asChild"
-    :data-state="rootContext.open.value ? 'open' : 'closed'"
+    :data-state="context.open.value ? 'open' : 'closed'"
     :data-disabled="disabled ? '' : undefined"
     :style="{
       WebkitTouchCallout: 'none',

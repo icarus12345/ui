@@ -25,8 +25,8 @@ export const [injectMenubarMenuContext, provideMenubarMenuContext]
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
-import { injectMenubarRootContext } from './MenubarRoot.vue'
-import { MenuRoot } from '../Menu'
+import { injectMenubarRootContext } from './Menubar.vue'
+import { Menu } from '../Menu'
 
 const props = defineProps<MenubarMenuProps>()
 
@@ -54,7 +54,7 @@ provideMenubarMenuContext({
 </script>
 
 <template>
-  <MenuRoot
+  <Menu
     :open="open"
     :modal="false"
     :dir="rootContext.dir.value"
@@ -67,5 +67,5 @@ provideMenubarMenuContext({
     "
   >
     <slot />
-  </MenuRoot>
+  </Menu>
 </template>

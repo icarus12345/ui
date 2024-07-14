@@ -20,7 +20,7 @@ export interface ContextMenuContentProps
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { injectContextMenuRootContext } from './ContextMenuRoot.vue'
+import { injectContextMenuContext } from './ContextMenu.vue'
 import { MenuContent } from '../Menu'
 
 const props = withDefaults(defineProps<ContextMenuContentProps>(), {
@@ -35,7 +35,7 @@ const emits = defineEmits<ContextMenuContentEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 
 useForwardExpose()
-const rootContext = injectContextMenuRootContext()
+const context = injectContextMenuContext()
 const hasInteractedOutside = ref(false)
 </script>
 
@@ -66,7 +66,7 @@ const hasInteractedOutside = ref(false)
     "
     @interact-outside="
       (event) => {
-        if (!event.defaultPrevented && !rootContext.modal.value)
+        if (!event.defaultPrevented && !context.modal.value)
           hasInteractedOutside = true;
       }
     "

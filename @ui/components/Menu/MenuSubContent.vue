@@ -18,7 +18,7 @@ export interface MenuSubContentProps extends Omit<MenuContentImplProps, 'disable
 
 <script setup lang="ts">
 import MenuContentImpl from './MenuContentImpl.vue'
-import { injectMenuContext, injectMenuRootContext } from './MenuRoot.vue'
+import { injectMenuContext, injectMenuRootContext } from './Menu.vue'
 import { injectMenuSubContext } from './MenuSub.vue'
 import { SUB_CLOSE_KEYS } from './utils'
 import { Presence } from '../Presence'
@@ -37,7 +37,7 @@ const menuSubContext = injectMenuSubContext()
 
 const { forwardRef, currentElement: subContentElement } = useForwardExpose()
 
-menuSubContext.contentId ||= useUId(undefined, 'menu-sub-content')
+menuSubContext.contentId ||= useUId(undefined, 'ui-menu-sub-content')
 </script>
 
 <template>
