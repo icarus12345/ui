@@ -117,11 +117,11 @@ onMounted(() => {
       :data-state="rootContext.stateAttribute.value"
       v-bind="{ ...$attrs, ...popperContentProps }"
       :style="{
-        '--radix-tooltip-content-transform-origin': 'var(--radix-popper-transform-origin)',
-        '--radix-tooltip-content-available-width': 'var(--radix-popper-available-width)',
-        '--radix-tooltip-content-available-height': 'var(--radix-popper-available-height)',
-        '--radix-tooltip-trigger-width': 'var(--radix-popper-anchor-width)',
-        '--radix-tooltip-trigger-height': 'var(--radix-popper-anchor-height)',
+        // '--ui-tooltip-content-transform-origin': 'var(--ui-popper-transform-origin)',
+        // '--ui-tooltip-content-available-width': 'var(--ui-popper-available-width)',
+        // '--ui-tooltip-content-available-height': 'var(--ui-popper-available-height)',
+        // '--ui-tooltip-trigger-width': 'var(--ui-popper-anchor-width)',
+        // '--ui-tooltip-trigger-height': 'var(--ui-popper-anchor-height)',
       }"
     >
       <slot />

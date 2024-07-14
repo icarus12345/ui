@@ -7,7 +7,7 @@ export interface PopoverTriggerProps extends PrimitiveProps {}
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { injectPopoverRootContext } from './PopoverRoot.vue'
+import { injectPopoverContext } from './Popover.vue'
 import { Primitive } from '../Primitive'
 import { PopperAnchor } from '../Popper'
 
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<PopoverTriggerProps>(), {
   as: 'button',
 })
 
-const rootContext = injectPopoverRootContext()
+const rootContext = injectPopoverContext()
 
 const { forwardRef, currentElement: triggerElement } = useForwardExpose()
 

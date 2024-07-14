@@ -63,7 +63,12 @@ async function handlePointerLeave(event: PointerEvent) {
 </script>
 
 <template>
-  <CollectionItem>
+  <CollectionItem class="
+    relative flex items-center whitespace-nowrap ring-offset-background transition-colors ui-outline ui-disable
+    size-default
+    text-foreground
+    hover:bg-foreground/[0.05]
+  ">
     <Primitive
       :ref="forwardRef"
       role="menuitem"

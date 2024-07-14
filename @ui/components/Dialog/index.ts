@@ -32,3 +32,24 @@ export {
   default as DialogDescription,
   type DialogDescriptionProps,
 } from './DialogDescription.vue'
+
+import { type VariantProps, cva } from 'class-variance-authority'
+export const dialogVariants = cva(
+  '',
+  {
+    variants: {
+      size: {
+        xs: 'max-w-xs',
+        sm: 'max-w-sm',
+        default: 'max-w-sm',
+        lg: 'max-w-lg',
+        xl: 'max-w-xl',
+      },
+    },
+    defaultVariants: {
+      size: 'default',
+    },
+  },
+)
+
+export type DialogVariants = VariantProps<typeof dialogVariants>

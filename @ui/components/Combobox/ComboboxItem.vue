@@ -105,7 +105,12 @@ provideComboboxItemContext({
 <template>
   <CollectionItem
     :value="value"
-    class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-grass9 data-[highlighted]:text-grass1"
+    class="
+      relative flex items-center whitespace-nowrap ring-offset-background transition-colors ui-outline ui-disable
+      size-default
+      text-foreground
+      hover:bg-foreground/[0.05]
+    "
     >
     <Primitive
       v-show="isInOption"

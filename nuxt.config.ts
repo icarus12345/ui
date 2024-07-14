@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        class: 'text-base theme-green dark',
+        class: 'text-base',
       },
     },
     rootAttrs: {

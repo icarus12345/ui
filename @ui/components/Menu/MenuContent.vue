@@ -21,6 +21,7 @@ import MenuContentNonModal from './MenuContentNonModal.vue'
 import { injectMenuContext, injectMenuRootContext } from './Menu.vue'
 import { Presence } from '../Presence'
 import { useForwardPropsEmits } from '../../composables/useForwardPropsEmits'
+import { cn } from '@/utils/utils'
 
 const props = defineProps<MenuContentProps>()
 const emits = defineEmits<MenuContentImplEmits>()
@@ -35,6 +36,10 @@ const rootContext = injectMenuRootContext()
     <MenuContentModal
       v-if="rootContext.modal.value"
       v-bind="{ ...$attrs, ...forwarded }"
+      :class="[
+        'ui-data-state-animate',
+        'z-50 min-w-32 overflow-hidden rounded-md bg-popover p-1 text-popover-foreground shadow-md border border-muted',
+      ]"
     >
       <slot />
     </MenuContentModal>

@@ -26,7 +26,7 @@ const onClick = (e) => {
     :value="item.link"
     :class="
       [
-        'group w-full gap-1 rounded-lg px-0 md:flex-col h-auto group max-md:justify-start md:py-1',
+        'group w-full gap-1 rounded-lg px-0 md:flex-col group max-md:justify-start md:py-1',
         'text-foreground',
         'select-none',
         'data-[highlighted]:ring-green9- data-[highlighted]:ring-1-',

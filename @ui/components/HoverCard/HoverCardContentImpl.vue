@@ -95,11 +95,11 @@ onUnmounted(() => {
         // Safari requires prefix
         'WebkitUserSelect': containSelection ? 'text' : undefined,
         // re-namespace exposed content custom properties
-        '--radix-hover-card-content-transform-origin': 'var(--radix-popper-transform-origin)',
-        '--radix-hover-card-content-available-width': 'var(--radix-popper-available-width)',
-        '--radix-hover-card-content-available-height': 'var(--radix-popper-available-height)',
-        '--radix-hover-card-trigger-width': 'var(--radix-popper-anchor-width)',
-        '--radix-hover-card-trigger-height': 'var(--radix-popper-anchor-height)',
+        // '--ui-hover-card-content-transform-origin': 'var(--ui-popper-transform-origin)',
+        // '--ui-hover-card-content-available-width': 'var(--ui-popper-available-width)',
+        // '--ui-hover-card-content-available-height': 'var(--ui-popper-available-height)',
+        // '--ui-hover-card-trigger-width': 'var(--ui-popper-anchor-width)',
+        // '--ui-hover-card-trigger-height': 'var(--ui-popper-anchor-height)',
       }"
       @pointerdown="(event: PointerEvent) => {
         // Contain selection to current layer

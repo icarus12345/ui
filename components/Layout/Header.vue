@@ -4,7 +4,7 @@ import { useMediaQuery } from '@vueuse/core'
 // import { ScrollArea } from '@ui/components/scroll-area'
 // import { Button } from '@ui/components/button'
 // import {
-//   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, DropdownMenuShortcut,
+//   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, Shortcut,
 //   DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent, DropdownMenuPortal
 // } from '@ui/components/dropdown-menu'
 // import ThemePopover from '@/components/ThemePopover.vue'
@@ -72,7 +72,7 @@ const isMediumScreen = useMediaQuery('(min-width: 768px)')
         <ThemeDrawer v-else />
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
-            <Button id="radix-vue-dropdown-menu-trigger-1" variant="secondary" size="icon" class="rounded-full">
+            <Button id="radix-vue-dropdown-menu-trigger-1" variant="secondary" size="icon">
               <Icon name="material-symbols:account-circle-outline" class="h-5 w-5">
               </Icon>
               <span class="absolute top-0 right-0 w-2 h-2">
@@ -97,15 +97,15 @@ const isMediumScreen = useMediaQuery('(min-width: 768px)')
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 Profile
-                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                <Shortcut>⇧⌘P</Shortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 Billing
-                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                <Shortcut>⌘B</Shortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 Settings
-                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                <Shortcut>⌘S</Shortcut>
               </DropdownMenuItem>
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
@@ -135,7 +135,7 @@ const isMediumScreen = useMediaQuery('(min-width: 768px)')
             <DropdownMenuSeparator />
             <DropdownMenuItem @click="handleLogout">
               Log out
-              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+              <Shortcut>⇧⌘Q</Shortcut>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

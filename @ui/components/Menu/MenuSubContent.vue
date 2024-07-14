@@ -23,6 +23,7 @@ import { injectMenuSubContext } from './MenuSub.vue'
 import { SUB_CLOSE_KEYS } from './utils'
 import { Presence } from '../Presence'
 // import { useForwardExpose, useForwardPropsEmits, useId } from '../../shared'
+import { cn } from '@/utils/utils'
 
 const props = withDefaults(defineProps<MenuSubContentProps>(), {
   prioritizePosition: true,
@@ -85,6 +86,11 @@ menuSubContext.contentId ||= useUId(undefined, 'ui-menu-sub-content')
           event.preventDefault();
         }
       }"
+    :class="[
+      'ui-data-state-animate',
+      'z-50 min-w-32 overflow-hidden rounded-md bg-popover p-1 text-popover-foreground shadow-lg border border-muted',
+      ]"
+
     >
       <slot />
     </MenuContentImpl>

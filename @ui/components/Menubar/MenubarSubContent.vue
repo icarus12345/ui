@@ -56,14 +56,14 @@ function handleArrowNavigation(event: KeyboardEvent) {
     v-bind="forwarded"
     data-radix-menubar-content=""
     :style="{
-      '--radix-menubar-content-transform-origin':
-        'var(--radix-popper-transform-origin)',
-      '--radix-menubar-content-available-width':
-        'var(--radix-popper-available-width)',
-      '--radix-menubar-content-available-height':
-        'var(--radix-popper-available-height)',
-      '--radix-menubar-trigger-width': 'var(--radix-popper-anchor-width)',
-      '--radix-menubar-trigger-height': 'var(--radix-popper-anchor-height)',
+      // '--ui-menubar-content-transform-origin':
+      //   'var(--ui-popper-transform-origin)',
+      // '--ui-menubar-content-available-width':
+      //   'var(--ui-popper-available-width)',
+      // '--ui-menubar-content-available-height':
+      //   'var(--ui-popper-available-height)',
+      // '--ui-menubar-trigger-width': 'var(--ui-popper-anchor-width)',
+      // '--ui-menubar-trigger-height': 'var(--ui-popper-anchor-height)',
     }"
     @keydown.arrow-right="handleArrowNavigation"
   >

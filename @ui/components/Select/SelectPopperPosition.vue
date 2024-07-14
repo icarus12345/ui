@@ -22,14 +22,14 @@ const forwarded = useForwardProps(props)
     :style="{
       // Ensure border-box for floating-ui calculations
       'boxSizing': 'border-box',
-      '--radix-select-content-transform-origin':
-        'var(--radix-popper-transform-origin)',
-      '--radix-select-content-available-width':
-        'var(--radix-popper-available-width)',
-      '--radix-select-content-available-height':
-        'var(--radix-popper-available-height)',
-      '--radix-select-trigger-width': 'var(--radix-popper-anchor-width)',
-      '--radix-select-trigger-height': 'var(--radix-popper-anchor-height)',
+      // '--ui-select-content-transform-origin':
+      //   'var(--ui-popper-transform-origin)',
+      // '--ui-select-content-available-width':
+      //   'var(--ui-popper-available-width)',
+      // '--ui-select-content-available-height':
+      //   'var(--ui-popper-available-height)',
+      // '--ui-select-trigger-width': 'var(--ui-popper-anchor-width)',
+      // '--ui-select-trigger-height': 'var(--ui-popper-anchor-height)',
     }"
   >
     <slot />

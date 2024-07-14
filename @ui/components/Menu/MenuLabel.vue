@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<MenuLabelProps>(), {
 </script>
 
 <template>
-  <Primitive v-bind="props">
+  <Primitive v-bind="props" class="size-default">
     <slot />
   </Primitive>
 </template>

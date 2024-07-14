@@ -39,10 +39,10 @@ export type MenuEmits = {
 }
 
 export const [injectMenuContext, provideMenuContext]
-  = createContext<MenuContext>(['MenuRoot', 'MenuSub'], 'MenuContext')
+  = createContext<MenuContext>(['Menu', 'MenuSub'], 'MenuContext')
 
 export const [injectMenuRootContext, provideMenuRootContext]
-  = createContext<MenuRootContext>('MenuRoot')
+  = createContext<MenuRootContext>('Menu')
 </script>
 
 <script setup lang="ts">

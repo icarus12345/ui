@@ -28,7 +28,12 @@ rootContext.contentId ||= useUId(undefined, 'ui-combobox-content')
 </script>
 
 <template>
-  <Presence :present="forceMount || rootContext.open.value">
+  <Presence :present="forceMount || rootContext.open.value"
+    :class="[
+      'ui-data-state-animate',
+      'z-50 min-w-32 overflow-hidden rounded-md bg-popover p-1 text-popover-foreground shadow-md border border-muted',
+    ]"
+    >
     <ComboboxContentImpl
       v-bind="{ ...forwarded, ...$attrs }"
       :ref="forwardRef"

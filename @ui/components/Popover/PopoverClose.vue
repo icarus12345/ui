@@ -7,8 +7,8 @@ export interface PopoverCloseProps extends PrimitiveProps {}
 
 <script setup lang="ts">
 import {
-  injectPopoverRootContext,
-} from './PopoverRoot.vue'
+  injectPopoverContext,
+} from './Popover.vue'
 import { Primitive } from '../Primitive'
 
 const props = withDefaults(defineProps<PopoverCloseProps>(), {
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<PopoverCloseProps>(), {
 })
 
 useForwardExpose()
-const rootContext = injectPopoverRootContext()
+const rootContext = injectPopoverContext()
 </script>
 
 <template>

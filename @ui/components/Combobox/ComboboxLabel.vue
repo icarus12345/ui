@@ -23,6 +23,7 @@ const groupContext = injectComboboxGroupContext({ id: '' })
   <Primitive
     v-bind="props"
     :id="groupContext.id"
+    class="size-default"
   >
     <slot />
   </Primitive>

@@ -31,7 +31,7 @@ export interface PopoverContentImplProps
 </script>
 
 <script setup lang="ts">
-import { injectPopoverRootContext } from './PopoverRoot.vue'
+import { injectPopoverContext } from './Popover.vue'
 import { PopperContent } from '../Popper'
 import { DismissableLayer } from '../DismissableLayer'
 import { FocusScope } from '../FocusScope'
@@ -43,7 +43,7 @@ const emits = defineEmits<PopoverContentImplEmits>()
 const forwarded = useForwardProps(props)
 const { forwardRef } = useForwardExpose()
 
-const rootContext = injectPopoverRootContext()
+const rootContext = injectPopoverContext()
 useFocusGuards()
 </script>
 
@@ -71,14 +71,14 @@ useFocusGuards()
         :data-state="rootContext.open.value ? 'open' : 'closed'"
         role="dialog"
         :style="{
-          '--radix-popover-content-transform-origin':
-            'var(--radix-popper-transform-origin)',
-          '--radix-popover-content-available-width':
-            'var(--radix-popper-available-width)',
-          '--radix-popover-content-available-height':
-            'var(--radix-popper-available-height)',
-          '--radix-popover-trigger-width': 'var(--radix-popper-anchor-width)',
-          '--radix-popover-trigger-height': 'var(--radix-popper-anchor-height)',
+          // '--ui-popover-content-transform-origin':
+          //   'var(--ui-popper-transform-origin)',
+          // '--ui-popover-content-available-width':
+          //   'var(--ui-popper-available-width)',
+          // '--ui-popover-content-available-height':
+          //   'var(--ui-popper-available-height)',
+          // '--ui-popover-trigger-width': 'var(--ui-popper-anchor-width)',
+          // '--ui-popover-trigger-height': 'var(--ui-popper-anchor-height)',
         }"
       >
         <slot />

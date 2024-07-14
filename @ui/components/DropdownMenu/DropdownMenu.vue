@@ -10,7 +10,7 @@ export interface DropdownMenuRootProps extends MenuProps {
 }
 export type DropdownMenuRootEmits = MenuEmits
 
-export interface DropdownMenuRootContext {
+export interface DropdownMenuContext {
   open: Readonly<Ref<boolean>>
   onOpenChange: (open: boolean) => void
   onOpenToggle: () => void
@@ -21,8 +21,8 @@ export interface DropdownMenuRootContext {
   dir: Ref<Direction>
 }
 
-export const [injectDropdownMenuRootContext, provideDropdownMenuRootContext]
-  = createContext<DropdownMenuRootContext>('DropdownMenuRoot')
+export const [injectDropdownMenuContext, provideDropdownMenuContext]
+  = createContext<DropdownMenuContext>('DropdownMenu')
 </script>
 
 <script setup lang="ts">
@@ -53,7 +53,7 @@ const triggerElement = ref<HTMLElement>()
 
 const { modal, dir: propDir } = toRefs(props)
 const dir = useDirection(propDir)
-provideDropdownMenuRootContext({
+provideDropdownMenuContext({
   open,
   onOpenChange: (value) => {
     open.value = value

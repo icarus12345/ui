@@ -11,7 +11,7 @@ function handleClick() {
 </script>
 
 <template>
-  <DropdownMenuRoot v-model:open="toggleState">
+  <DropdownMenu v-model:open="toggleState">
     <DropdownMenuTrigger
       class="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-grass11 bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-green3 focus:shadow-[0_0_0_2px] focus:shadow-black"
       aria-label="Customise options"
@@ -21,12 +21,11 @@ function handleClick() {
 
     <DropdownMenuPortal>
       <DropdownMenuContent
-        class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+        class=""
         :side-offset="5"
       >
         <DropdownMenuItem
           value="New Tab"
-          class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
           @click="handleClick"
         >
           New Tab
@@ -39,7 +38,6 @@ function handleClick() {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger
             value="more toolsz"
-            class="group w-full text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-green4 data-[state=open]:text-grass11 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:bg-green9 data-[highlighted]:data-[state=open]:text-green1"
           >
             More Tools
             <div
@@ -50,12 +48,10 @@ function handleClick() {
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent
-              class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
               :side-offset="2"
               :align-offset="-5"
             >
               <DropdownMenuItem
-                class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Save Page As…
                 <div
@@ -65,18 +61,15 @@ function handleClick() {
                 </div>
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Create Shortcut…
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Name Window…
               </DropdownMenuItem>
               <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Developer Tools
               </DropdownMenuItem>
@@ -85,7 +78,6 @@ function handleClick() {
         </DropdownMenuSub>
         <DropdownMenuItem
           value="New Window"
-          class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
         >
           New Window
           <div
@@ -96,7 +88,6 @@ function handleClick() {
         </DropdownMenuItem>
         <DropdownMenuItem
           value="New Private Window"
-          class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
           disabled
         >
           New Private Window
@@ -109,7 +100,6 @@ function handleClick() {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger
             value="more tools"
-            class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none w-full outline-none data-[state=open]:bg-green4 data-[state=open]:text-grass11 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:bg-green9 data-[highlighted]:data-[state=open]:text-green1"
           >
             More Tools
             <div
@@ -120,12 +110,10 @@ function handleClick() {
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent
-              class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
               :side-offset="2"
               :align-offset="-5"
             >
               <DropdownMenuItem
-                class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Save Page As…
                 <div
@@ -135,25 +123,21 @@ function handleClick() {
                 </div>
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Create Shortcut…
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Name Window…
               </DropdownMenuItem>
               <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Developer Tools
               </DropdownMenuItem>
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger
                   value="more toolsz"
-                  class="group w-full text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-green4 data-[state=open]:text-grass11 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:bg-green9 data-[highlighted]:data-[state=open]:text-green1"
                 >
                   More Tools
                   <div
@@ -164,12 +148,10 @@ function handleClick() {
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuSubContent
-                    class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
                     :side-offset="2"
                     :align-offset="-5"
                   >
                     <DropdownMenuItem
-                      class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                     >
                       Save Page As…
                       <div
@@ -179,25 +161,21 @@ function handleClick() {
                       </div>
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                     >
                       Create Shortcut…
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                     >
                       Name Window…
                     </DropdownMenuItem>
                     <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
                     <DropdownMenuItem
-                      class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                     >
                       Developer Tools
                     </DropdownMenuItem>
                     <DropdownMenuSub>
                       <DropdownMenuSubTrigger
                         value="more toolsz"
-                        class="group w-full text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-green4 data-[state=open]:text-grass11 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:bg-green9 data-[highlighted]:data-[state=open]:text-green1"
                       >
                         More Tools
                         <div
@@ -208,12 +186,10 @@ function handleClick() {
                       </DropdownMenuSubTrigger>
                       <DropdownMenuPortal>
                         <DropdownMenuSubContent
-                          class="min-w-[220px] outline-none bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
                           :side-offset="2"
                           :align-offset="-5"
                         >
                           <DropdownMenuItem
-                            class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                           >
                             Save Page As…
                             <div
@@ -223,18 +199,15 @@ function handleClick() {
                             </div>
                           </DropdownMenuItem>
                           <DropdownMenuItem
-                            class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                           >
                             Create Shortcut…
                           </DropdownMenuItem>
                           <DropdownMenuItem
-                            class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                           >
                             Name Window…
                           </DropdownMenuItem>
                           <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
                           <DropdownMenuItem
-                            class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
                           >
                             Developer Tools
                           </DropdownMenuItem>
@@ -245,7 +218,6 @@ function handleClick() {
                 </DropdownMenuPortal>
               </DropdownMenuSub>
               <DropdownMenuItem
-                class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
               >
                 Developer Tools
               </DropdownMenuItem>
@@ -255,7 +227,6 @@ function handleClick() {
         <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
         <DropdownMenuCheckboxItem
           v-model:checked="checkboxOne"
-          class="group text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
         >
           <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
             <Icon name="radix-icons:check" />
@@ -269,21 +240,19 @@ function handleClick() {
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           v-model:checked="checkboxTwo"
-          class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
         >
           <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
             <Icon name="radix-icons:check" />
           </DropdownMenuItemIndicator>
           Show Full URLs
         </DropdownMenuCheckboxItem>
-        <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+        <DropdownMenuSeparator/>
 
-        <DropdownMenuLabel class="pl-[25px] text-xs leading-[25px] text-mauve11">
+        <DropdownMenuLabel>
           People
         </DropdownMenuLabel>
         <DropdownMenuRadioGroup v-model="person">
           <DropdownMenuRadioItem
-            class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
             value="pedro"
           >
             <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
@@ -292,7 +261,6 @@ function handleClick() {
             Pedro Duarte
           </DropdownMenuRadioItem>
           <DropdownMenuRadioItem
-            class="text-[13px] leading-none text-grass11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-green9 data-[highlighted]:text-green1"
             value="colm"
           >
             <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
@@ -304,5 +272,5 @@ function handleClick() {
         <DropdownMenuArrow class="fill-white" />
       </DropdownMenuContent>
     </DropdownMenuPortal>
-  </DropdownMenuRoot>
+  </DropdownMenu>
 </template>

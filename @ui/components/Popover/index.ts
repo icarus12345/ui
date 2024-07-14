@@ -1,8 +1,8 @@
 export {
-  default as PopoverRoot,
-  type PopoverRootProps,
-  type PopoverRootEmits,
-} from './PopoverRoot.vue'
+  default as Popover,
+  type PopoverProps,
+  type PopoverEmits,
+} from './Popover.vue'
 export {
   default as PopoverTrigger,
   type PopoverTriggerProps,

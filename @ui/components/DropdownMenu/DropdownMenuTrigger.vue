@@ -10,7 +10,7 @@ export interface DropdownMenuTriggerProps extends PrimitiveProps {
 
 <script setup lang="ts">
 import { nextTick, onMounted } from 'vue'
-import { injectDropdownMenuRootContext } from './DropdownMenu.vue'
+import { injectDropdownMenuContext } from './DropdownMenu.vue'
 import {
   Primitive,
 } from '../Primitive'
@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<DropdownMenuTriggerProps>(), {
   as: 'button',
 })
 
-const rootContext = injectDropdownMenuRootContext()
+const rootContext = injectDropdownMenuContext()
 
 const { forwardRef, currentElement: triggerElement } = useForwardExpose()
 

@@ -7,7 +7,7 @@ import { type DateRange, type Granularity, type HourCycle, getDefaultDate } from
 import type { Matcher, WeekDayFormat } from '@ui/shared/date'
 
 import { type DateRangeFieldRoot, type DateRangeFieldRootProps } from '../DateRangeField'
-import { PopoverRoot, type PopoverRootEmits, type PopoverRootProps } from '../Popover'
+import { Popover, type PopoverEmits, type PopoverProps } from '../Popover'
 import { type RangeCalendarRootProps } from '../RangeCalendar'
 import type { Direction } from '@ui/types'
 
@@ -43,7 +43,7 @@ type DateRangePickerRootContext = {
   dir: Ref<Direction>
 }
 
-export type DateRangePickerRootProps = DateRangeFieldRootProps & PopoverRootProps & Pick<RangeCalendarRootProps, 'isDateDisabled' | 'pagedNavigation' | 'weekStartsOn' | 'weekdayFormat' | 'fixedWeeks' | 'numberOfMonths' | 'preventDeselect'>
+export type DateRangePickerRootProps = DateRangeFieldRootProps & PopoverProps & Pick<RangeCalendarRootProps, 'isDateDisabled' | 'pagedNavigation' | 'weekStartsOn' | 'weekdayFormat' | 'fixedWeeks' | 'numberOfMonths' | 'preventDeselect'>
 
 export type DateRangePickerRootEmits = {
   /** Event handler called whenever the model value changes */
@@ -84,7 +84,7 @@ const props = withDefaults(defineProps<DateRangePickerRootProps>(), {
   isDateDisabled: undefined,
   isDateUnavailable: undefined,
 })
-const emits = defineEmits<DateRangePickerRootEmits & PopoverRootEmits>()
+const emits = defineEmits<DateRangePickerRootEmits & PopoverEmits>()
 const {
   locale,
   disabled,
@@ -175,11 +175,11 @@ provideDateRangePickerRootContext({
 </script>
 
 <template>
-  <PopoverRoot
+  <Popover
     v-model:open="open"
     :default-open="defaultOpen"
     :modal="modal"
   >
     <slot />
-  </PopoverRoot>
+  </Popover>
 </template>

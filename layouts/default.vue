@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const navbar = useNavbar()
+const { theme, radius } = useCustomize()
+
+useServerHead({
+  htmlAttrs: {
+    class: `theme-${theme.value}`,
+    style: `--radius: ${radius.value}rem;`,
+  },
+})
 </script>
 
 <template>

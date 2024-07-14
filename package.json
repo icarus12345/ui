@@ -16,6 +16,7 @@
     "@nuxtjs/color-mode": "^3.4.2",
     "@radix-ui/colors": "^3.0.0",
     "@vueuse/core": "^10.11.0",
+    "@vueuse/math": "^10.11.0",
     "@vueuse/shared": "^10.11.0",
     "aria-hidden": "^1.2.4",
     "class-variance-authority": "^0.7.0",

@@ -80,14 +80,14 @@ onMounted(() => {
 const popperStyle = {
   // Ensure border-box for floating-ui calculations
   'boxSizing': 'border-box',
-  '--radix-combobox-content-transform-origin':
-        'var(--radix-popper-transform-origin)',
-  '--radix-combobox-content-available-width':
-        'var(--radix-popper-available-width)',
-  '--radix-combobox-content-available-height':
-        'var(--radix-popper-available-height)',
-  '--radix-combobox-trigger-width': 'var(--radix-popper-anchor-width)',
-  '--radix-combobox-trigger-height': 'var(--radix-popper-anchor-height)',
+  // '--ui-combobox-content-transform-origin':
+  //       'var(--ui-popper-transform-origin)',
+  // '--ui-combobox-content-available-width':
+  //       'var(--ui-popper-available-width)',
+  // '--ui-combobox-content-available-height':
+  //       'var(--ui-popper-available-height)',
+  // '--ui-combobox-trigger-width': 'var(--ui-popper-anchor-width)',
+  // '--ui-combobox-trigger-height': 'var(--ui-popper-anchor-height)',
 }
 
 provideComboboxContentContext({ position })

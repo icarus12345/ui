@@ -36,7 +36,7 @@
     --radius: 0.6rem;
   }
  
-  .dark {
+  .dark-mode {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
  
@@ -114,9 +114,34 @@
   }
 
   .ui-outline {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
   }
+
   .ui-disable {
-    @apply disabled:pointer-events-none disabled:opacity-50 disabled:grayscale
+    @apply disabled:pointer-events-none disabled:opacity-50 disabled:grayscale;
+  }
+
+  .size-xs {
+    @apply min-h-6 rounded px-2 text-xs;
+  }
+  .size-sm {
+    @apply min-h-7 rounded-md px-2.5 text-sm;
+  }
+  .size-default {
+    @apply min-h-8 px-3 py-2 rounded-md text-base;
+  }
+  .size-md {
+    @apply min-h-9 rounded-md px-3.5 text-md;
+  }
+  .size-lg {
+    @apply min-h-10 rounded-md px-4 text-lg;
+  }
+  .ui-data-state-animate {
+    @apply data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95;
+    @apply data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95;
+    @apply data-[side=bottom]:slide-in-from-top-2;
+    @apply data-[side=left]:slide-in-from-right-2;
+    @apply data-[side=right]:slide-in-from-left-2;
+    @apply data-[side=top]:slide-in-from-bottom-2;
   }
 }

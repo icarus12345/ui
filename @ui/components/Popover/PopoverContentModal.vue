@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import PopoverContentImpl, { type PopoverContentImplEmits, type PopoverContentImplProps } from './PopoverContentImpl.vue'
-import { injectPopoverRootContext } from './PopoverRoot.vue'
+import { injectPopoverContext } from './Popover.vue'
 // import { useBodyScrollLock, useForwardExpose, useForwardPropsEmits, useHideOthers } from '../../shared'
 
 const props = defineProps<PopoverContentImplProps>()
 const emits = defineEmits<PopoverContentImplEmits>()
-const rootContext = injectPopoverRootContext()
+const rootContext = injectPopoverContext()
 const isRightClickOutsideRef = ref(false)
 
 useBodyScrollLock(true)

@@ -79,7 +79,7 @@ const unSetHover = () => {
                 <Button
                   as-child
                   variant="ghost"
-                  class="w-full gap-2 rounded-lg px-3 justify-start mt-1"
+                  class="w-full gap-2 justify-start mt-1"
                   :class="[
                     { 'bg-foreground/[0.05]': nav.link === $route.path },
                   ]"

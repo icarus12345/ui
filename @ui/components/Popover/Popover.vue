@@ -2,7 +2,7 @@
 import type { Ref } from 'vue'
 // import { createContext } from '../../shared'
 
-export interface PopoverRootProps {
+export interface PopoverProps {
   /**
    * The open state of the popover when it is initially rendered. Use when you do not need to control its open state.
    */
@@ -18,14 +18,14 @@ export interface PopoverRootProps {
    */
   modal?: boolean
 }
-export type PopoverRootEmits = {
+export type PopoverEmits = {
   /**
    * Event handler called when the open state of the popover changes.
    */
   'update:open': [value: boolean]
 }
 
-export interface PopoverRootContext {
+export interface PopoverContext {
   triggerElement: Ref<HTMLElement | undefined>
   contentId: string
   open: Ref<boolean>
@@ -35,8 +35,8 @@ export interface PopoverRootContext {
   hasCustomAnchor: Ref<boolean>
 }
 
-export const [injectPopoverRootContext, providePopoverRootContext]
-  = createContext<PopoverRootContext>('PopoverRoot')
+export const [injectPopoverContext, providePopoverContext]
+  = createContext<PopoverContext>('Popover')
 </script>
 
 <script setup lang="ts">
@@ -44,12 +44,12 @@ import { ref, toRefs } from 'vue'
 import { useVModel } from '@vueuse/core'
 import { PopperRoot } from '../Popper'
 
-const props = withDefaults(defineProps<PopoverRootProps>(), {
+const props = withDefaults(defineProps<PopoverProps>(), {
   defaultOpen: false,
   open: undefined,
   modal: false,
 })
-const emit = defineEmits<PopoverRootEmits>()
+const emit = defineEmits<PopoverEmits>()
 
 defineSlots<{
   default: (props: {
@@ -68,7 +68,7 @@ const open = useVModel(props, 'open', emit, {
 const triggerElement = ref<HTMLElement>()
 const hasCustomAnchor = ref(false)
 
-providePopoverRootContext({
+providePopoverContext({
   contentId: '',
   modal,
   open,

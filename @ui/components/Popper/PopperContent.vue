@@ -243,22 +243,22 @@ const computedMiddleware = computedEager(() => {
           maxWidth: `${availableWidth}px`,
           maxHeight: `${availableHeight}px`,
         })
-        contentStyle.setProperty(
-          '--radix-popper-available-width',
-          `${availableWidth}px`,
-        )
-        contentStyle.setProperty(
-          '--radix-popper-available-height',
-          `${availableHeight}px`,
-        )
-        contentStyle.setProperty(
-          '--radix-popper-anchor-width',
-          `${anchorWidth}px`,
-        )
-        contentStyle.setProperty(
-          '--radix-popper-anchor-height',
-          `${anchorHeight}px`,
-        )
+        // contentStyle.setProperty(
+        //   '--ui-popper-available-width',
+        //   `${availableWidth}px`,
+        // )
+        // contentStyle.setProperty(
+        //   '--ui-popper-available-height',
+        //   `${availableHeight}px`,
+        // )
+        // contentStyle.setProperty(
+        //   '--ui-popper-anchor-width',
+        //   `${anchorWidth}px`,
+        // )
+        // contentStyle.setProperty(
+        //   '--ui-popper-anchor-height',
+        //   `${anchorHeight}px`,
+        // )
       },
     }),
     arrow.value

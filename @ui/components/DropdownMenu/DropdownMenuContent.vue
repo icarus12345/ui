@@ -11,7 +11,7 @@ export interface DropdownMenuContentProps extends MenuContentProps {}
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { injectDropdownMenuRootContext } from './DropdownMenu.vue'
+import { injectDropdownMenuContext } from './DropdownMenu.vue'
 import { MenuContent } from '../Menu'
 // import { useForwardExpose, useForwardPropsEmits, useId } from '../../shared'
 
@@ -20,7 +20,7 @@ const emits = defineEmits<DropdownMenuContentEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 useForwardExpose()
 
-const rootContext = injectDropdownMenuRootContext()
+const rootContext = injectDropdownMenuContext()
 
 const hasInteractedOutsideRef = ref(false)
 
@@ -47,15 +47,15 @@ rootContext.contentId ||= useUId(undefined, 'ui-dropdown-menu-content')
     :id="rootContext.contentId"
     :aria-labelledby="rootContext?.triggerId"
     :style="{
-      '--radix-dropdown-menu-content-transform-origin':
-        'var(--radix-popper-transform-origin)',
-      '--radix-dropdown-menu-content-available-width':
-        'var(--radix-popper-available-width)',
-      '--radix-dropdown-menu-content-available-height':
-        'var(--radix-popper-available-height)',
-      '--radix-dropdown-menu-trigger-width': 'var(--radix-popper-anchor-width)',
-      '--radix-dropdown-menu-trigger-height':
-        'var(--radix-popper-anchor-height)',
+      // '--ui-dropdown-menu-content-transform-origin':
+      //   'var(--ui-popper-transform-origin)',
+      // '--ui-dropdown-menu-content-available-width':
+      //   'var(--ui-popper-available-width)',
+      // '--ui-dropdown-menu-content-available-height':
+      //   'var(--ui-popper-available-height)',
+      // '--ui-dropdown-menu-trigger-width': 'var(--ui-popper-anchor-width)',
+      // '--ui-dropdown-menu-trigger-height':
+      //   'var(--ui-popper-anchor-height)',
     }"
     @close-auto-focus="handleCloseAutoFocus"
     @interact-outside="(event) => {
