@@ -10,6 +10,7 @@ export interface SelectContentProps extends SelectContentImplProps {
   /**
    * Used to force mounting when more control is needed. Useful when
    * controlling animation with Vue animation libraries.
+   * 
    */
   forceMount?: boolean
 }
@@ -49,6 +50,10 @@ const renderPresence = computed(() => props.forceMount || rootContext.open.value
     v-if="renderPresence"
     ref="presenceRef"
     :present="true"
+    :class="[
+      'ui-data-state-animate',
+      'z-50 min-w-32 overflow-hidden rounded-md bg-popover text-popover-foreground shadow-md border border-muted',
+    ]"
   >
     <SelectContentImpl v-bind="{ ...forwarded, ...$attrs }">
       <slot />

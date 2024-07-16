@@ -40,6 +40,9 @@ onMounted(() => {
     :as="as"
     :as-child="asChild"
     :style="{ pointerEvents: 'none' }"
+    :class="{
+      'text-muted-foreground': !rootContext.modelValue?.value
+    }"
   >
     <template v-if="shouldShowPlaceholder(rootContext.modelValue?.value)">
       {{ placeholder }}

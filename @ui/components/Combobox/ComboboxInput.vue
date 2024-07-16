@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { PrimitiveProps } from '../Primitive'
 import { useForwardExpose } from '../../shared'
+import type { HTMLAttributes } from 'vue'
 
 export interface ComboboxInputProps extends PrimitiveProps {
   /** Native input type */
@@ -8,7 +9,8 @@ export interface ComboboxInputProps extends PrimitiveProps {
   /** When `true`, prevents the user from interacting with item */
   disabled?: boolean
   /** Focus on element when mounted. */
-  autoFocus?: boolean
+  autoFocus?: boolean,
+  class?: HTMLAttributes['class']
 }
 </script>
 
@@ -16,7 +18,8 @@ export interface ComboboxInputProps extends PrimitiveProps {
 import { computed, onMounted } from 'vue'
 import { injectComboboxRootContext } from './ComboboxRoot.vue'
 import { Primitive } from '../Primitive'
-
+import { type Variants, fieldControlVariants } from '@ui/shared/variants'
+import { cn } from '@/utils/utils'
 const props = withDefaults(defineProps<ComboboxInputProps>(), {
   type: 'text',
   as: 'input',
@@ -84,6 +87,10 @@ function handleInput(event: Event) {
     @keydown.down.up.prevent="handleKeyDown"
     @keydown.enter="rootContext.onInputEnter"
     @keydown.home.end.prevent="handleHomeEnd"
+    :class="cn(
+      fieldControlVariants({ variant: rootContext.variant.value, size: rootContext.size.value }),
+      props.class
+    )"
   >
     <slot />
   </Primitive>

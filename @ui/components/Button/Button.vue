@@ -4,14 +4,14 @@ import { Primitive, type PrimitiveProps } from '../Primitive'
 import { type ButtonVariants, buttonVariants } from './types'
 import { cn } from '@/utils/utils'
 
-interface Props extends PrimitiveProps {
+interface ButtonProps extends PrimitiveProps {
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
   class?: HTMLAttributes['class']
   loading?: Boolean,
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   as: 'button',
 })
 </script>

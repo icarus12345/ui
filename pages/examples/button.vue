@@ -18,7 +18,7 @@ const breadcrumbLinks = ref([
 
 <template>
   <div class="flex flex-col gap-4">
-    <BaseBreadcrumbCustom :links="breadcrumbLinks" />
+    <LayoutBreadcrumb :links="breadcrumbLinks" />
     <div class="grid gap-2">
       <h2 class="text-3xl font-bold tracking-tight">
         Button
@@ -70,6 +70,9 @@ const breadcrumbLinks = ref([
           <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
             <Button variant="outline">
               Outline
+            </Button>
+            <Button variant="gradient">
+              Gradient
             </Button>
           </div>
         </CardContent>

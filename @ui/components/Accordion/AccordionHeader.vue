@@ -10,7 +10,7 @@ import { injectAccordionRootContext } from './AccordionRoot.vue'
 import { Primitive } from '../Primitive'
 
 const props = withDefaults(defineProps<AccordionHeaderProps>(), {
-  as: 'h3',
+  as: 'div',
 })
 
 const rootContext = injectAccordionRootContext()

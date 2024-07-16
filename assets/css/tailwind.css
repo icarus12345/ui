@@ -34,6 +34,8 @@
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.6rem;
+
+    --tw-shadow-color: hsl(var(--border));
   }
  
   .dark-mode {
@@ -121,6 +123,24 @@
     @apply disabled:pointer-events-none disabled:opacity-50 disabled:grayscale;
   }
 
+  .ui-checked-state {
+    @apply data-[state="checked"]:bg-accent data-[state="checked"]:text-accent-foreground;
+  }
+
+  .ui-highlighted {
+    @apply data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground ;
+  }
+
+  .ui-hovered {
+    @apply hover:text-accent-foreground hover:bg-accent 
+  }
+  .ui-focused {
+    @apply focus:bg-accent focus:text-accent-foreground;
+  }
+  .ui-focus-within {
+    @apply focus-within:outline-none focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 ring-offset-background;
+  }
+
   .size-xs {
     @apply min-h-6 rounded px-2 text-xs;
   }
@@ -144,4 +164,41 @@
     @apply data-[side=right]:slide-in-from-left-2;
     @apply data-[side=top]:slide-in-from-bottom-2;
   }
+  .ui-field {
+    @apply relative;
+    &:before {
+      @apply content-[''] absolute inset-0 border border-input bg-background ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 rounded-md;
+    }
+    > .ui-field__content {
+      @apply relative flex z-0;
+    }
+  }
+  .gradient-border {
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    width: 100%;
+    background-size: 400% auto;
+    opacity: 0.5;
+    transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .gradient-border:hover::before {
+    background-position: -50% 0;
+    opacity: 1;
+  }
+  /* @media (prefers-color-scheme: dark) { */
+    .gradient-border::before {
+      background-image: linear-gradient(90deg, #303030 0%, #303030 25%, #00DC82 50%, #36E4DA 75%, #0047E1 100%);
+    }
+  /* } */
 }

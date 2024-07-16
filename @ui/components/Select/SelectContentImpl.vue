@@ -289,13 +289,7 @@ provideSelectContentContext({
         role="listbox"
         :data-state="rootContext.open.value ? 'open' : 'closed'"
         :dir="rootContext.dir.value"
-        :style="{
-          // flex layout so we can place the scroll buttons properly
-          display: 'flex',
-          flexDirection: 'column',
-          // reset the outline by default as the content MAY get focused
-          outline: 'none',
-        }"
+        class="flex flex-col outline-none gap-px"
         @contextmenu.prevent
         @placed="isPositioned = true"
         @keydown="(handleKeyDown as any)"

@@ -10,20 +10,22 @@ export interface ComboboxLabelProps extends PrimitiveProps {
 import { Primitive } from '../Primitive'
 import { useForwardExpose } from '../../shared'
 import { injectComboboxGroupContext } from './ComboboxGroup.vue'
-
+import { injectComboboxRootContext } from './ComboboxRoot.vue'
+import { menuItemGroupVariants } from '@ui/shared/variants'
 const props = withDefaults(defineProps<ComboboxLabelProps>(), {
   as: 'div',
 })
 
 useForwardExpose()
 const groupContext = injectComboboxGroupContext({ id: '' })
+const rootContext = injectComboboxRootContext()
 </script>
 
 <template>
   <Primitive
     v-bind="props"
     :id="groupContext.id"
-    class="size-default"
+    :class="menuItemGroupVariants({size: rootContext.size.value})"
   >
     <slot />
   </Primitive>

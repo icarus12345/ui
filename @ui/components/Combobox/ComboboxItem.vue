@@ -3,6 +3,7 @@ import type { Ref } from 'vue'
 import type { PrimitiveProps } from '../Primitive'
 // import { createContext, handleAndDispatchCustomEvent, useForwardExpose, useId } from '../../shared'
 import type { AcceptableValue } from './ComboboxRoot.vue'
+import type { HTMLAttributes } from 'vue'
 
 export type SelectEvent<T> = CustomEvent<{ originalEvent: PointerEvent, value?: T }>
 interface ComboboxItemContext {
@@ -21,7 +22,8 @@ export interface ComboboxItemProps<T = AcceptableValue> extends PrimitiveProps {
   /** The value given as data when submitted with a `name`. */
   value: T
   /** When `true`, prevents the user from interacting with the item. */
-  disabled?: boolean
+  disabled?: boolean,
+  class?: HTMLAttributes['class']
 }
 
 const COMBOBOX_SELECT = 'combobox.select'
@@ -41,7 +43,8 @@ import {
 } from '../Primitive'
 import { CollectionItem } from '../Collection'
 import isEqual from 'fast-deep-equal'
-
+import { type Variants, menuItemVariants } from '@ui/shared/variants'
+import { cn } from '@/utils/utils'
 const props = defineProps<ComboboxItemProps<T>>()
 const emits = defineEmits<ComboboxItemEmits<T>>()
 
@@ -100,17 +103,13 @@ if (props.value === '') {
 provideComboboxItemContext({
   isSelected,
 })
+
 </script>
 
 <template>
   <CollectionItem
     :value="value"
-    class="
-      relative flex items-center whitespace-nowrap ring-offset-background transition-colors ui-outline ui-disable
-      size-default
-      text-foreground
-      hover:bg-foreground/[0.05]
-    "
+    :class="cn(menuItemVariants({ variant: rootContext.variant.value, size: rootContext.size.value }), props.class)"
     >
     <Primitive
       v-show="isInOption"
@@ -131,6 +130,9 @@ provideComboboxItemContext({
       @pointermove="handlePointerMove"
     >
       <slot>{{ value }}</slot>
+      <ComboboxItemIndicator as-child>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-auto" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg>
+      </ComboboxItemIndicator>
     </Primitive>
   </CollectionItem>
 </template>

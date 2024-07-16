@@ -79,10 +79,11 @@ function handleScroll(event: WheelEvent) {
       // we use position: 'relative' here on the `viewport` so that when we call
       // `selectedItem.offsetTop` in calculations, the offset is relative to the viewport
       // (independent of the scrollUpButton).
-      position: 'relative',
-      flex: 1,
-      overflow: 'auto',
+      // position: 'relative',
+      // flex: 1,
+      // overflow: 'auto',
     }"
+    class="p-1 relative flex-1 overflow-auto flex flex-col gap-px"
     @scroll="handleScroll"
   >
     <slot />

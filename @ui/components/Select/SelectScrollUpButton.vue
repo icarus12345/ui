@@ -53,6 +53,7 @@ watch(currentElement, () => {
         viewport.value.scrollTop = viewport.value.scrollTop - selectedItem.value.offsetHeight;
       }
     }"
+    class="flex cursor-default items-center justify-center py-1"
   >
     <slot />
   </SelectScrollButtonImpl>

@@ -4,7 +4,7 @@ import type { Direction } from '../../shared/types'
 import type { PrimitiveProps } from '../Primitive'
 import { createContext, useDirection, useFormControl, useForwardExpose } from '../../shared'
 import { createCollection } from '../Collection'
-
+import { type Variants } from '@ui/shared/variants'
 export type AcceptableValue = string | number | boolean | Record<string, any>
 type ArrayOrWrapped<T> = T extends any[] ? T : Array<T>
 
@@ -29,6 +29,8 @@ type ComboboxRootContext<T> = {
   selectedElement: ComputedRef<HTMLElement | undefined>
   onSelectedValueChange: (val: T) => void
   parentElement: Ref<HTMLElement | undefined>
+  variant: Ref<Variants['variant']>
+  size: Ref<Variants['size']>
 }
 
 export const [injectComboboxRootContext, provideComboboxRootContext]
@@ -75,6 +77,9 @@ export interface ComboboxRootProps<T = AcceptableValue> extends PrimitiveProps {
    * @defaultValue `true`
    */
   resetSearchTermOnBlur?: boolean
+
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 </script>
 
@@ -101,7 +106,7 @@ defineSlots<{
   }) => any
 }>()
 
-const { multiple, disabled, dir: propDir } = toRefs(props)
+const { multiple, disabled, dir: propDir, size, variant } = toRefs(props)
 const dir = useDirection(propDir)
 
 const searchTerm = useVModel(props, 'searchTerm', emit, {
@@ -287,6 +292,8 @@ provideComboboxRootContext({
   parentElement,
   contentElement,
   onContentElementChange: val => contentElement.value = val,
+  variant,
+  size,
 })
 </script>
 

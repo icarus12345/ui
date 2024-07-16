@@ -21,8 +21,11 @@ const { forwardRef } = useForwardExpose()
       :as-child="asChild"
       :as="as"
       v-bind="$attrs"
+      class="ui-field"
     >
-      <slot />
+      <div class="ui-field__content">
+        <slot />
+      </div>
     </Primitive>
   </PopperAnchor>
 </template>

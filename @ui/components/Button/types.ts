@@ -10,6 +10,8 @@ export const buttonVariants = cva(
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:
           'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        gradient:
+          'gradient-border',
         secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
@@ -18,7 +20,7 @@ export const buttonVariants = cva(
       size: {
         xs: 'h-6 rounded px-2 text-xs',
         sm: 'h-7 rounded-md px-2.5 text-sm',
-        default: 'size-default',
+        default: 'size-default px-3',
         md: 'h-9 rounded-md px-3.5 text-md',
         lg: 'h-10 rounded-md px-4 text-lg',
         icon: 'h-6 w-6 rounded',

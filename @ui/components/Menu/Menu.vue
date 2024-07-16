@@ -2,12 +2,15 @@
 import type { Ref } from 'vue'
 import type { Direction } from './utils'
 // import { createContext, useDirection } from '../../shared'
+import { type Variants } from '@ui/shared/variants'
 
 export interface MenuContext {
   open: Ref<boolean>
   onOpenChange: (open: boolean) => void
   content: Ref<HTMLElement | undefined>
   onContentChange: (content: HTMLElement | undefined) => void
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 
 export interface MenuRootContext {
@@ -15,6 +18,8 @@ export interface MenuRootContext {
   dir: Ref<Direction>
   isUsingKeyboardRef: Ref<boolean>
   modal: Ref<boolean>
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 
 export interface MenuProps {
@@ -32,6 +37,9 @@ export interface MenuProps {
    * When set to `true`, interaction with outside elements will be disabled and only menu content will be visible to screen readers.
    */
   modal?: boolean
+
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 
 export type MenuEmits = {
@@ -60,7 +68,7 @@ const props = withDefaults(defineProps<MenuProps>(), {
   modal: true,
 })
 const emits = defineEmits<MenuEmits>()
-const { modal, dir: propDir } = toRefs(props)
+const { modal, dir: propDir, variant, size } = toRefs(props)
 const dir = useDirection(propDir)
 
 const open = useVModel(props, 'open', emits)
@@ -107,6 +115,8 @@ provideMenuContext({
   onContentChange: (element) => {
     content.value = element
   },
+  variant,
+  size,
 })
 
 provideMenuRootContext({
@@ -116,6 +126,8 @@ provideMenuRootContext({
   isUsingKeyboardRef,
   dir,
   modal,
+  variant,
+  size,
 })
 </script>
 

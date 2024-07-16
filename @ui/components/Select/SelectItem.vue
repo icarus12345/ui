@@ -2,6 +2,7 @@
 import type { Ref } from 'vue'
 import type { PrimitiveProps } from '../Primitive'
 // import { createContext, useForwardExpose, useId } from '../../shared'
+import type { HTMLAttributes } from 'vue'
 
 interface SelectItemContext {
   value: string
@@ -27,6 +28,8 @@ export interface SelectItemProps extends PrimitiveProps {
    * Use this when the content is complex, or you have non-textual content inside.
    */
   textValue?: string
+  class?: HTMLAttributes['class']
+  // size-sm size-md size-lg size-xs
 }
 </script>
 
@@ -42,6 +45,8 @@ import { injectSelectRootContext } from './SelectRoot.vue'
 import { SelectContentDefaultContextValue, injectSelectContentContext } from './SelectContentImpl.vue'
 import { SELECTION_KEYS } from './utils'
 import { Primitive } from '../Primitive'
+import { type Variants, menuItemVariants } from '@ui/shared/variants'
+import { cn } from '@/utils/utils'
 
 const props = defineProps<SelectItemProps>()
 const { disabled } = toRefs(props)
@@ -153,7 +158,15 @@ provideSelectItemContext({
     @pointermove="handlePointerMove"
     @pointerleave="handlePointerLeave"
     @keydown="handleKeyDown"
+    :class="cn(
+      menuItemVariants({ variant: rootContext.variant.value, size: rootContext.size.value }),
+      props.class
+    )"
   >
     <slot />
+    
+    <SelectItemIndicator as-child>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-auto" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"/></svg>
+    </SelectItemIndicator>
   </Primitive>
 </template>

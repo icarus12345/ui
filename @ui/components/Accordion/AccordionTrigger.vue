@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { PrimitiveProps } from '../Primitive'
-
 export interface AccordionTriggerProps extends PrimitiveProps {}
 </script>
 
@@ -8,10 +7,12 @@ export interface AccordionTriggerProps extends PrimitiveProps {}
 // import { useId } from '../../composables/useId'
 import { injectAccordionItemContext } from './AccordionItem.vue'
 import { injectAccordionRootContext } from './AccordionRoot.vue'
-
+import { type Variants, accordionTriggerVariants } from '@ui/shared/variants'
 import { CollapsibleTrigger } from '../Collapsible'
 
-const props = defineProps<AccordionTriggerProps>()
+const props = defineProps<AccordionTriggerProps & {
+  class?: HTMLAttributes['class'],
+}>()
 
 const rootContext = injectAccordionRootContext()
 const itemContext = injectAccordionItemContext()
@@ -38,7 +39,19 @@ function changeItem() {
     :data-state="itemContext.dataState.value"
     :disabled="itemContext.disabled.value"
     @click="changeItem"
+    :class="cn(
+      'w-full outline-none flex items-center justify-center shadow-[0_1px_0_hsl(var(--border))] rounded-none ui-hovered',
+      accordionTriggerVariants({ variant: rootContext.variant.value, size: rootContext.size.value }),
+      props.class
+    )"
   >
     <slot />
+    <Icon
+      name="radix-icons:chevron-down"
+      :class="[
+        'ms-auto transition-transform',
+        {'rotate-180': itemContext.open.value}
+      ]"
+    />
   </CollapsibleTrigger>
 </template>

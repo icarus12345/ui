@@ -16,6 +16,7 @@ useForwardExpose()
   <Primitive
     v-bind="props"
     aria-hidden
+    class="-mx-1 my-1 h-px bg-muted"
   >
     <slot />
   </Primitive>

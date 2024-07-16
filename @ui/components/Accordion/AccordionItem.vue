@@ -43,7 +43,7 @@ export const [injectAccordionItemContext, provideAccordionItemContext]
 import { CollapsibleRoot } from '../Collapsible'
 // import { computed } from 'vue'
 
-const props = defineProps<AccordionItemProps>()
+const props = defineProps<AccordionItemProps& { class?: HTMLAttributes['class'] }>()
 
 defineSlots<{
   default: (props: {
@@ -113,6 +113,7 @@ function handleArrowKey(e: KeyboardEvent) {
     :as="props.as"
     :as-child="props.asChild"
     @keydown.up.down.left.right.home.end="handleArrowKey"
+    :class="cn('mt-px first:mt-0 first:rounded-t last:rounded-b ui-focus-within', props.class)"
   >
     <slot :open="open" />
   </CollapsibleRoot>

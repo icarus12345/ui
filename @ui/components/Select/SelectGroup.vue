@@ -26,6 +26,7 @@ provideSelectGroupContext({ id })
     role="group"
     v-bind="props"
     :aria-labelledby="id"
+    class="flex flex-col gap-px"
   >
     <slot />
   </Primitive>

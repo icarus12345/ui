@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+const useIdFunction = () => useId()
 </script>
 
 <template>
-  <NuxtLayout vaul-drawer-wrapper>
-    <NuxtPage />
-  </NuxtLayout>
+  <ConfigProvider :use-id="useIdFunction">
+    <NuxtLayout vaul-drawer-wrapper>
+      <NuxtPage />
+    </NuxtLayout>
+  </ConfigProvider>
 </template>

@@ -12,7 +12,8 @@ import { Primitive } from '../Primitive'
 import { useForwardExpose } from '../../shared'
 import { computed } from 'vue'
 import { injectComboboxRootContext } from './ComboboxRoot.vue'
-
+import { type Variants, iconVariants } from '@ui/shared/variants'
+import { cn } from '@/utils/utils'
 const props = withDefaults(defineProps<ComboboxTriggerProps>(), {
   as: 'button',
 })
@@ -20,6 +21,7 @@ const props = withDefaults(defineProps<ComboboxTriggerProps>(), {
 useForwardExpose()
 const rootContext = injectComboboxRootContext()
 const disabled = computed(() => props.disabled || rootContext.disabled.value || false)
+const { variant, size} = rootContext
 </script>
 
 <template>
@@ -36,7 +38,15 @@ const disabled = computed(() => props.disabled || rootContext.disabled.value || 
     :data-disabled="disabled ? '' : undefined"
     :aria-disabled="disabled ?? undefined"
     @click="rootContext.onOpenChange(!rootContext.open.value)"
+    :class="cn(
+      'flex items-center justify-center',
+      iconVariants({ size: rootContext.size.value }),
+      {'rotate-180': rootContext.open.value}
+    )"
   >
-    <slot />
+    <Icon
+      name="radix-icons:chevron-down"
+      class=""
+    />
   </Primitive>
 </template>

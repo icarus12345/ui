@@ -58,6 +58,7 @@ provideComboboxGroupContext({
     ref="currentRef"
     role="group"
     :aria-labelledby="id"
+    class="flex flex-col gap-px"
   >
     <slot />
   </Primitive>

@@ -5,7 +5,7 @@
   <Popover>
     <PopoverTrigger as-child>
       <Button variant="ghost" size="icon">
-        <Icon name="i-lucide-paintbrush" size="16" />
+        <Icon name="i-lucide-paintbrush" />
       </Button>
     </PopoverTrigger>
     <PopoverContent class="w-92" align="end">

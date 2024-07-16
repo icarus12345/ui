@@ -33,7 +33,10 @@ export interface AccordionRootProps<ValidValue = string | string[], ExplicitType
    *
    * @defaultValue "vertical"
    */
-  orientation?: DataOrientation
+  orientation?: DataOrientation,
+
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 
 export type AccordionRootEmits<T extends SingleOrMultipleType = SingleOrMultipleType> = {
@@ -51,7 +54,10 @@ export type AccordionRootContext<P extends AccordionRootProps> = {
   changeModelValue: (value: string) => void
   isSingle: ComputedRef<boolean>
   modelValue: Ref<string | undefined | string[]>
-  collapsible: boolean
+  collapsible: boolean,
+
+  variant: Ref<Variants['variant']>
+  size: Ref<Variants['size']>
 }
 
 export const [injectAccordionRootContext, provideAccordionRootContext]
@@ -78,7 +84,7 @@ defineSlots<{
   }) => any
 }>()
 
-const { dir, disabled } = toRefs(props)
+const { dir, disabled, variant, size } = toRefs(props)
 const direction = useDirection(dir)
 
 const { modelValue, changeModelValue, isSingle } = useSingleOrMultipleValue(props, emits)
@@ -94,6 +100,7 @@ provideAccordionRootContext({
   collapsible: props.collapsible,
   modelValue,
   changeModelValue,
+  variant, size,
 })
 </script>
 

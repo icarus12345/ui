@@ -32,6 +32,7 @@ rootContext.contentId ||= useUId(undefined, 'ui-combobox-content')
     :class="[
       'ui-data-state-animate',
       'z-50 min-w-32 overflow-hidden rounded-md bg-popover p-1 text-popover-foreground shadow-md border border-muted',
+      'flex flex-col outline-none gap-px'
     ]"
     >
     <ComboboxContentImpl

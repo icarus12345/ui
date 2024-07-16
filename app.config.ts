@@ -1,16 +1,16 @@
 export default defineAppConfig({
-  // icon: {
+  icon: {
   //   size: '24px', // default <Icon> size applied
-  //   class: 'icon', // default <Icon> class applied
-  //   mode: 'css', // default <Icon> mode applied
+    class: 'icon', // default <Icon> class applied
+    // mode: 'css', // default <Icon> mode applied
   //   aliases: {
   //     'nuxt': 'logos:nuxt-icon',
   //   },
-  //   // customCollections: [
-  //   //   {
-  //   //     prefix: 'icon',
-  //   //     dir: './assets/icons'
-  //   //   },
-  //   // ],
-  // },
+    // customCollections: [
+    //   {
+    //     prefix: 'icon',
+    //     dir: './assets/icons'
+    //   },
+    // ],
+  },
 })

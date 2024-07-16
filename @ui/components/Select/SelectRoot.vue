@@ -2,6 +2,7 @@
 import type { Ref, VNode } from 'vue'
 import type { Direction } from '../../utils/types'
 // import { createContext, useDirection, useFormControl } from '../../shared'
+import { type Variants } from '@ui/shared/variants'
 
 export interface SelectRootProps {
   /** The controlled open state of the Select. Can be bind as `v-model:open`. */
@@ -21,7 +22,10 @@ export interface SelectRootProps {
   /** When `true`, prevents the user from interacting with Select */
   disabled?: boolean
   /** When `true`, indicates that the user must select a value before the owning form can be submitted. */
-  required?: boolean
+  required?: boolean,
+
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 export type SelectRootEmits = {
   /** Event handler called when the value changes. */
@@ -46,6 +50,8 @@ export interface SelectRootContext {
   dir: Ref<Direction>
   triggerPointerDownPosRef: Ref<{ x: number, y: number } | null>
   disabled?: Ref<boolean>
+  variant?: Variants['variant']
+  size?: Variants['size']
 }
 
 export const [injectSelectRootContext, provideSelectRootContext]
@@ -101,7 +107,7 @@ const triggerPointerDownPosRef = ref({
 })
 const valueElementHasChildren = ref(false)
 
-const { required, disabled, dir: propDir } = toRefs(props)
+const { required, disabled, dir: propDir, variant, size } = toRefs(props)
 const dir = useDirection(propDir)
 provideSelectRootContext({
   triggerElement,
@@ -129,6 +135,8 @@ provideSelectRootContext({
   dir,
   triggerPointerDownPosRef,
   disabled,
+  variant,
+  size,
 })
 
 const isFormControl = useFormControl(triggerElement)

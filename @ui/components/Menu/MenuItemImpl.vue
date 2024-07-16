@@ -1,5 +1,6 @@
 <script lang="ts">
 import type { PrimitiveProps } from '../Primitive'
+import type { HTMLAttributes } from 'vue'
 
 export interface MenuItemImplProps extends PrimitiveProps {
   /** When `true`, prevents the user from interacting with the item. */
@@ -9,6 +10,7 @@ export interface MenuItemImplProps extends PrimitiveProps {
    *  Use this when the content is complex, or you have non-textual content inside.
    */
   textValue?: string
+  class?: HTMLAttributes['class']
 }
 </script>
 
@@ -16,18 +18,21 @@ export interface MenuItemImplProps extends PrimitiveProps {
 import { nextTick, ref } from 'vue'
 import { isMouseEvent } from './utils'
 import { injectMenuContentContext } from './MenuContentImpl.vue'
+import { injectMenuRootContext } from './Menu.vue'
 import {
   Primitive,
 } from '../Primitive'
 import { CollectionItem } from '../Collection'
 import { useForwardExpose } from '../../shared'
-
+import { type Variants, menuItemVariants } from '@ui/shared/variants'
+import { cn } from '@/utils/utils'
 defineOptions({
   inheritAttrs: false,
 })
 
 const props = defineProps<MenuItemImplProps>()
 
+const rootContext = injectMenuRootContext()
 const contentContext = injectMenuContentContext()
 const { forwardRef } = useForwardExpose()
 
@@ -63,12 +68,9 @@ async function handlePointerLeave(event: PointerEvent) {
 </script>
 
 <template>
-  <CollectionItem class="
-    relative flex items-center whitespace-nowrap ring-offset-background transition-colors ui-outline ui-disable
-    size-default
-    text-foreground
-    hover:bg-foreground/[0.05]
-  ">
+  <CollectionItem
+    :class="cn(menuItemVariants({ variant: rootContext.variant.value, size: rootContext.size.value }), props.class)"
+    >
     <Primitive
       :ref="forwardRef"
       role="menuitem"

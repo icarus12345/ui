@@ -14,6 +14,7 @@ const props = defineProps<SelectSeparatorProps>()
   <Primitive
     aria-hidden
     v-bind="props"
+    class="-mx-1 my-1 h-px bg-muted"
   >
     <slot />
   </Primitive>

@@ -58,6 +58,7 @@ watch(currentElement, () => {
         }
       }
     "
+    class="flex cursor-default items-center justify-center py-1"
   >
     <slot />
   </SelectScrollButtonImpl>
