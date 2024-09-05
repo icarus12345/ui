@@ -73,8 +73,8 @@ onUnmounted(() => {
     :ref="forwardRef"
     :data-state="scrollbarContextVisible.hasThumb ? 'visible' : 'hidden'"
     :style="{
-      width: 'var(--radix-scroll-area-thumb-width)',
-      height: 'var(--radix-scroll-area-thumb-height)',
+      width: 'var(--ui-scroll-area-thumb-width)',
+      height: 'var(--ui-scroll-area-thumb-height)',
     }"
     :as-child="props.asChild"
     :as="as"

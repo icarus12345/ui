@@ -1,11 +1,7 @@
 import { isClient } from '@vueuse/shared'
 import { handleAndDispatchCustomEvent } from '@/shared'
 import { type Ref, nextTick, ref, watchEffect } from 'vue'
-
-export type PointerDownOutsideEvent = CustomEvent<{
-  originalEvent: PointerEvent
-}>
-export type FocusOutsideEvent = CustomEvent<{ originalEvent: FocusEvent }>
+import type { PointerDownOutsideEvent, FocusOutsideEvent } from './types'
 
 export const DISMISSABLE_LAYER_NAME = 'DismissableLayer'
 export const CONTEXT_UPDATE = 'dismissableLayer.update'

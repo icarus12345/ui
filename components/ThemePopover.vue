@@ -4,9 +4,9 @@
 <template>
   <Popover>
     <PopoverTrigger as-child>
-      <Button variant="ghost" size="icon">
+      <IconButton variant="ghost" size="xs">
         <Icon name="i-lucide-paintbrush" />
-      </Button>
+      </IconButton>
     </PopoverTrigger>
     <PopoverContent class="w-92" align="end">
       <ThemeCustomize />

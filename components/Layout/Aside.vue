@@ -11,8 +11,9 @@ const activeNavItem = computed(() => {
   if (hoveredNavItem.value?.children?.length) {
     return hoveredNavItem.value
   }
-  return navMenu.filter((item: any) => route.path.startsWith(item.link || '')).pop()
+  return navbar.activeNavMenu.value
 })
+
 const onMouseLeave = () => {
   hoveredNavItem.value = undefined
 }
@@ -25,10 +26,10 @@ const unSetHover = () => {
   <aside
     @mouseleave="onMouseLeave"
     class="
-      sticky top-0 left-0 z-30 bg-foreground/[0.01] h-dvh
-      flex-col items-center transition-width duration-300 flex
+      fixed top-0 left-[calc((100dvw_-_min(132rem,_100dvw))_/_2)] z-30 md:bg-foreground/[0.01] h-dvh
+      flex-col transition-width duration-300 flex
       pointer-events-auto
-      md:w-20
+      md:w-20 max-md:bg-background
       max-md:w-[min(75dvw,_28rem)]
     "
     :class="[
@@ -36,8 +37,25 @@ const unSetHover = () => {
       { 'md:mr-48' : activeNavMenu?.children?.length }
     ]"
     >
+    <div
+      class="relative border-b border-border px-4 py-2 text-center z-10 w-full"
+    >
+      <div
+        class="flex items-center gap-2 justify-center"
+      >
+        <Button size="icon" variant="ghost" class="md:hidden " @click="toggle">
+          <Icon name="ic:round-menu-open" />
+          <span class="sr-only">Toggle navigation menu</span>
+        </Button>
+        <Button variant="outline" size="icon" aria-label="Home" class="max-md:ms-auto">
+          <Icon name="mdi:nuxt" class="w-5 h-5 fill-foreground" />
+        </Button>
+        <span class="me-auto md:hidden">Dashboard{{ isOpen }}</span>
+      </div>
+    </div>
     <ListboxRoot class="flex-1 flex flex-col">
       <ListboxContent class="flex flex-1 flex-col gap-2 p-2 ui-outline">
+        
           <LayoutNavLink
             v-for="(item, index) in navMenu"
             :key="index"
@@ -51,6 +69,7 @@ const unSetHover = () => {
           />
       </ListboxContent>
     </ListboxRoot>
+    
     <Transition name="fade">
       <nav
         class="
@@ -70,7 +89,6 @@ const unSetHover = () => {
             <div class="flex items-center gap-2  mb-3">
               <Button variant="ghost" size="icon" @click="unSetHover" class="md:hidden">
                 <Icon name="ic:round-arrow-back"/>
-                <span class="sr-only">Back</span>
               </Button>
               <div class="text-muted-foreground uppercase">{{ activeNavItem?.title }}</div>
             </div>

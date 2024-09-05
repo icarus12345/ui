@@ -59,23 +59,42 @@ module.exports = {
       keyframes: {
         slideDown: {
           from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 'var(--ui-accordion-content-height)' },
         },
         slideUp: {
-          from: { height: 'var(--radix-accordion-content-height)' },
+          from: { height: 'var(--ui-accordion-content-height)' },
           to: { height: 0 },
         },
+        gradientLoading: {
+          '0': {
+            'background-position': '0 0, 100% 0, 100% 100%, 0 100%'
+          },
+          '25%': {
+            'background-position': '100% 0, 100% 100%, 0 100%, 0 0'
+          },
+          '50%': {
+            'background-position': '100% 100%, 0 100%, 0 0, 100% 0'
+          },
+          '75%': {
+            'background-position': '0 100%, 0 0, 100% 0, 100% 100%'
+          },
+          '100%': {
+            'background-position': '0 0, 100% 0, 100% 100%, 0 100%'
+          },
+        }
       },
       animation: {
         slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        gradientLoading: 'gradientLoading 4s linear infinite',
       },
       borderRadius: {
-      	xl: "calc(var(--radius) + 0.4rem)",
-        lg: "calc(var(--radius) + 0.2rem)",
-        md: "calc(var(--radius))",
-        sm: "calc(var(--radius) - 0.2rem)",
-        DEFAULT: '0.6rem',
+        xs: "calc(var(--radius) * 0.75)",
+        sm: "calc(var(--radius) * 0.875)",
+        DEFAULT: 'var(--radius, 0.6rem)',
+        md: "calc(var(--radius, 0.6rem) * 1.125)",
+        lg: "calc(var(--radius, 0.6rem) * 1.25)",
+      	xl: "calc(var(--radius, 0.6rem) * 1.375)",
       },
       fontFamily: {
         sans: 'Google Sans'
@@ -133,13 +152,13 @@ module.exports = {
         96: '38.4rem',
       },
       fontSize: {
-        xxs: ['0.8rem', { lineHeight: '1.25' }],
-        xs: ['1.0rem', { lineHeight: '1.2' }],
-        sm: ['1.15rem', { lineHeight: '1.2173913' }],
-        base: ['1.3rem', { lineHeight: '1.23076923' }],
-        md: ['1.45rem', { lineHeight: '1.24137931' }],
-        lg: ['1.6rem', { lineHeight: '1.25' }],
-        xl: ['1.8rem', { lineHeight: '1.22222222' }],
+        xxs: ['0.8rem', '1.25'],
+        xs: ['1.0rem', '1.2'],
+        sm: ['1.15rem', '1.2173913'],
+        base: ['1.3rem', '1.23076923'], //13 16
+        md: ['1.45rem', '1.24137931'], // 14.5 18
+        lg: ['1.6rem', '1.25'], // 16 20
+        xl: ['1.8rem', '1.22222222'], // 18 22
       },
       maxWidth: {
         xs: 'min(32rem, calc(100dvw - 3.2rem))',
@@ -151,12 +170,14 @@ module.exports = {
     },
   },
   plugins: [
+    require("@thoughtbot/tailwindcss-aria-attributes"),
     animate,
-    plugin(function({ addBase }) {
+    plugin(({ addBase, addVariant }) => {
       addBase({
         ':root': { fontSize: "10px", lineHeight: "1.23076923" },
         // 'html': { fontSize: "13px" },
       })
+      addVariant('not-first-last', '&:not(:first-child):not(:last-child)');
     }),
   ],
 }

@@ -2,7 +2,7 @@
 import type {
   DialogRootEmits,
   DialogRootProps,
-} from '../Dialog'
+} from '../Dialog/types'
 
 export type AlertDialogEmits = DialogRootEmits
 export interface AlertDialogProps extends Omit<DialogRootProps, 'modal'> {}

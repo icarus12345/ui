@@ -13,10 +13,14 @@ function handleClick() {
 <template>
   <DropdownMenu v-model:open="toggleState">
     <DropdownMenuTrigger
-      class="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-grass11 bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-green3 focus:shadow-[0_0_0_2px] focus:shadow-black"
       aria-label="Customise options"
+      as-child
     >
-      <Icon name="radix-icons:hamburger-menu" />
+      <IconButton variant="ghost" size="xs">
+        <Icon name="ic:round-menu" />
+        <!-- <Icon name="radix-icons:hamburger-menu" /> -->
+        <span class="sr-only">Toggle navigation menu</span>
+      </IconButton>
     </DropdownMenuTrigger>
 
     <DropdownMenuPortal>
@@ -30,7 +34,6 @@ function handleClick() {
         >
           New Tab
           <div
-            class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
           >
             ⌘+T
           </div>
@@ -40,11 +43,7 @@ function handleClick() {
             value="more toolsz"
           >
             More Tools
-            <div
-              class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
-            >
-              <Icon name="radix-icons:chevron-right" />
-            </div>
+            <Icon class="ms-auto" name="radix-icons:chevron-right" />
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent
@@ -55,7 +54,6 @@ function handleClick() {
               >
                 Save Page As…
                 <div
-                  class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
                 >
                   ⌘+S
                 </div>
@@ -68,7 +66,7 @@ function handleClick() {
               >
                 Name Window…
               </DropdownMenuItem>
-              <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+              <DropdownMenuSeparator />
               <DropdownMenuItem
               >
                 Developer Tools
@@ -81,7 +79,6 @@ function handleClick() {
         >
           New Window
           <div
-            class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
           >
             ⌘+N
           </div>
@@ -92,7 +89,6 @@ function handleClick() {
         >
           New Private Window
           <div
-            class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
           >
             ⇧+⌘+N
           </div>
@@ -102,11 +98,7 @@ function handleClick() {
             value="more tools"
           >
             More Tools
-            <div
-              class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
-            >
-              <Icon name="radix-icons:chevron-right" />
-            </div>
+            <Icon class="ms-auto" name="radix-icons:chevron-right" />
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent
@@ -117,7 +109,6 @@ function handleClick() {
               >
                 Save Page As…
                 <div
-                  class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
                 >
                   ⌘+S
                 </div>
@@ -130,7 +121,7 @@ function handleClick() {
               >
                 Name Window…
               </DropdownMenuItem>
-              <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+              <DropdownMenuSeparator />
               <DropdownMenuItem
               >
                 Developer Tools
@@ -140,11 +131,7 @@ function handleClick() {
                   value="more toolsz"
                 >
                   More Tools
-                  <div
-                    class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
-                  >
-                    <Icon name="radix-icons:chevron-right" />
-                  </div>
+                  <Icon class="ms-auto" name="radix-icons:chevron-right" />
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuSubContent
@@ -155,7 +142,6 @@ function handleClick() {
                     >
                       Save Page As…
                       <div
-                        class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
                       >
                         ⌘+S
                       </div>
@@ -168,7 +154,7 @@ function handleClick() {
                     >
                       Name Window…
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+                    <DropdownMenuSeparator />
                     <DropdownMenuItem
                     >
                       Developer Tools
@@ -178,11 +164,7 @@ function handleClick() {
                         value="more toolsz"
                       >
                         More Tools
-                        <div
-                          class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
-                        >
-                          <Icon name="radix-icons:chevron-right" />
-                        </div>
+                        <Icon class="ms-auto" name="radix-icons:chevron-right" />
                       </DropdownMenuSubTrigger>
                       <DropdownMenuPortal>
                         <DropdownMenuSubContent
@@ -193,7 +175,6 @@ function handleClick() {
                           >
                             Save Page As…
                             <div
-                              class="ml-auto pl-[20px] text-mauve11 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8"
                             >
                               ⌘+S
                             </div>
@@ -206,7 +187,7 @@ function handleClick() {
                           >
                             Name Window…
                           </DropdownMenuItem>
-                          <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+                          <DropdownMenuSeparator />
                           <DropdownMenuItem
                           >
                             Developer Tools
@@ -224,7 +205,7 @@ function handleClick() {
             </DropdownMenuSubContent>
           </DropdownMenuPortal>
         </DropdownMenuSub>
-        <DropdownMenuSeparator class="h-[1px] bg-green6 m-[5px]" />
+        <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           v-model:checked="checkboxOne"
         >
@@ -241,7 +222,7 @@ function handleClick() {
         <DropdownMenuCheckboxItem
           v-model:checked="checkboxTwo"
         >
-          <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
+          <DropdownMenuItemIndicator>
             <Icon name="radix-icons:check" />
           </DropdownMenuItemIndicator>
           Show Full URLs
@@ -255,7 +236,7 @@ function handleClick() {
           <DropdownMenuRadioItem
             value="pedro"
           >
-            <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
+            <DropdownMenuItemIndicator>
               <Icon name="radix-icons:dot-filled" />
             </DropdownMenuItemIndicator>
             Pedro Duarte
@@ -263,13 +244,13 @@ function handleClick() {
           <DropdownMenuRadioItem
             value="colm"
           >
-            <DropdownMenuItemIndicator class="absolute left-0 w-[25px] inline-flex items-center justify-center">
+            <DropdownMenuItemIndicator>
               <Icon name="radix-icons:dot-filled" />
             </DropdownMenuItemIndicator>
             Colm Tuite
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
-        <DropdownMenuArrow class="fill-white" />
+        <DropdownMenuArrow/>
       </DropdownMenuContent>
     </DropdownMenuPortal>
   </DropdownMenu>

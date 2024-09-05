@@ -81,8 +81,8 @@ useResizeObserver(content, () => {
       :style="{
         // Prevent interaction when animating out
         pointerEvents: !open && menuContext.isRootMenu ? 'none' : undefined,
-        ['--radix-navigation-menu-viewport-width' as any]: size ? `${size?.width}px` : undefined,
-        ['--radix-navigation-menu-viewport-height' as any]: size ? `${size?.height}px` : undefined,
+        ['--ui-navigation-menu-viewport-width' as any]: size ? `${size?.width}px` : undefined,
+        ['--ui-navigation-menu-viewport-height' as any]: size ? `${size?.height}px` : undefined,
       }"
       @pointerenter="menuContext.onContentEnter(menuContext.modelValue.value)"
       @pointerleave="whenMouse(() => menuContext.onContentLeave())($event)"

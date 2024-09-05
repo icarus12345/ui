@@ -45,8 +45,8 @@ const breadcrumbLinks = ref([
           <CardTitle>Default</CardTitle>
         </CardHeader>
         <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
-            <Button class="rounded-full">Default</Button>
+          <div>
+            <Button class="rounded-full" :ui="{ base: 'ui-button--custom' }">Default</Button>
           </div>
         </CardContent>
       </Card>
@@ -55,7 +55,7 @@ const breadcrumbLinks = ref([
           <CardTitle>Secondary</CardTitle>
         </CardHeader>
         <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
+          <div>
             <Button variant="secondary">
               Secondary
             </Button>
@@ -66,15 +66,13 @@ const breadcrumbLinks = ref([
         <CardHeader>
           <CardTitle>Outline</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
+        <CardContent class="flex flex-wrap items-center justify-center gap-4">
             <Button variant="outline">
               Outline
             </Button>
             <Button variant="gradient">
               Gradient
             </Button>
-          </div>
         </CardContent>
       </Card>
       <Card class="w-full">
@@ -82,8 +80,8 @@ const breadcrumbLinks = ref([
           <CardTitle>Destructive</CardTitle>
         </CardHeader>
         <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
-            <Button variant="destructive">
+          <div>
+            <Button variant="destructive" :loading="true">
               Destructive
             </Button>
           </div>
@@ -94,7 +92,7 @@ const breadcrumbLinks = ref([
           <CardTitle>Ghost</CardTitle>
         </CardHeader>
         <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
+          <div>
             <Button variant="ghost">
               Ghost
             </Button>
@@ -106,7 +104,7 @@ const breadcrumbLinks = ref([
           <CardTitle>Link</CardTitle>
         </CardHeader>
         <CardContent>
-          <div class="h-100px w-full flex items-center justify-center gap-4 overflow-hidden sm:h-200px">
+          <div>
             <Button variant="link">
               Link
             </Button>
@@ -117,27 +115,27 @@ const breadcrumbLinks = ref([
         <CardHeader>
           <CardTitle>Size</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div class="w-full flex flex-wrap items-center justify-center gap-4 overflow-hidden sm:h-200px">
-            <Button size="xs" variant="outline">
-              Button xs
-            </Button>
-            <Button size="sm" variant="outline">
-              Button sm
-            </Button>
-            <Button variant="outline" :loading="true">
-              Button Default
-            </Button>
-            <Button size="md" variant="outline">
-              Button md
-            </Button>
-            <Button size="lg" variant="outline">
-              Button lg
-            </Button>
-            <Button size="icon" variant="outline" :loading="true">
+        <CardContent class="flex flex-wrap items-center justify-center gap-4">
+            <Button
+              variant="outline"
+              v-for="size in ['xs', 'md']"
+              :key="size"
+              :size="size"
+              :loading="true"
+              >
               <Icon name="lucide:chevron-right" />
+              Button {{ size }}
             </Button>
-          </div>
+            <IconButton
+              variant="outline"
+              v-for="size in ['xs', 'md']"
+              :key="size"
+              :size="size"
+              :loading="false"
+              shape="square"
+              >
+              <Icon name="lucide:chevron-right" />
+            </IconButton>
         </CardContent>
       </Card>
     </div>

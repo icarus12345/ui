@@ -4,7 +4,7 @@ import type {
   Ref,
 } from 'vue'
 import type { PopperContentProps } from '../Popper'
-import type { PointerDownOutsideEvent } from '../DismissableLayer'
+import type { PointerDownOutsideEvent } from '../DismissableLayer/types'
 // import {
 //   createContext,
 //   useBodyScrollLock,

@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { PopperContentProps } from '../Popper'
-import type { DismissableLayerEmits } from '../DismissableLayer'
+import type { DismissableLayerEmits } from '../DismissableLayer/types'
 // import { useForwardExpose, useGraceArea } from '../../shared'
 import { syncRef } from '@vueuse/shared'
 

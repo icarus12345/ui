@@ -63,6 +63,7 @@ const baseSide = computed(() => OPPOSITE_SIDE[contentContext.placedSide.value])
     <Arrow
       v-bind="$attrs"
       :ref="forwardRef"
+      class="fill-popover"
       :style="{
         display: 'block',
       }"

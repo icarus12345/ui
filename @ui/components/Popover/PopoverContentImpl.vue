@@ -3,7 +3,7 @@ import type { PopperContentProps } from '../Popper'
 import type {
   DismissableLayerEmits,
   DismissableLayerProps,
-} from '../DismissableLayer'
+} from '../DismissableLayer/types'
 import type { FocusScopeProps } from '../FocusScope'
 
 export type PopoverContentImplEmits = DismissableLayerEmits & {

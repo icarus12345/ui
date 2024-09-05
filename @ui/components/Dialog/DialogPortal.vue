@@ -1,10 +1,5 @@
-<script lang="ts">
-import type { TeleportProps } from '../Teleport'
-
-export interface DialogPortalProps extends TeleportProps {}
-</script>
-
 <script setup lang="ts">
+import type { DialogPortalProps } from './types'
 import { TeleportPrimitive } from '../Teleport'
 
 const props = defineProps<DialogPortalProps>()

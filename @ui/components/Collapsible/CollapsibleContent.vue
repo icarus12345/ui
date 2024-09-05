@@ -95,8 +95,8 @@ onMounted(() => {
       :data-disabled="rootContext.disabled?.value ? '' : undefined"
       :hidden="!presentRef?.present"
       :style="{
-        [`--radix-collapsible-content-height`]: `${height}px`,
-        [`--radix-collapsible-content-width`]: `${width}px`,
+        [`--ui-collapsible-content-height`]: `${height}px`,
+        [`--ui-collapsible-content-width`]: `${width}px`,
       }"
     >
       <slot v-if="presentRef?.present" />

@@ -1,47 +1,48 @@
-<script lang="ts">
-import { type HTMLAttributes } from 'vue'
-import type {
-  DialogContentImplEmits,
-  DialogContentImplProps,
-} from './DialogContentImpl.vue'
-
-export type DialogContentEmits = DialogContentImplEmits
-
-export interface DialogContentProps extends DialogContentImplProps {
-  /**
-   * Used to force mounting when more control is needed. Useful when
-   * controlling animation with Vue animation libraries.
-   */
-  forceMount?: boolean,
-  class?: HTMLAttributes['class'],
-  size?: DialogVariants['size']
-}
-</script>
 
 <script setup lang="ts">
+import {
+  type DialogContentProps,
+  type DialogContentEmits,
+  injectDialogRootContext,
+} from './types'
 import DialogContentModal from './DialogContentModal.vue'
 import DialogContentNonModal from './DialogContentNonModal.vue'
-import { injectDialogRootContext } from './DialogRoot.vue'
 import { Presence } from '../Presence'
 // import { useForwardExpose } from '../../composables/useForwardExpose'
 // import { useId } from '../../composables/useId'
-import { type DialogVariants, dialogVariants } from '.'
+import dialogUI from './utils'
 
-const props = defineProps<DialogContentProps>()
+const props = withDefaults(defineProps<DialogContentProps>(), {
+  size: 'md',
+  width: 'md',
+})
 const emits = defineEmits<DialogContentEmits>()
 
 const rootContext = injectDialogRootContext()
 
 const emitsAsProps = useEmitAsProps(emits)
 const { forwardRef } = useForwardExpose()
+
+
+const uiSize: any = inject('ui-size', undefined)
+const currentSize = computed(() => {
+  return uiSize?.value || props.size
+})
+provide('ui-size', currentSize)
+const { ui, attrs }: any = useUI(toRef(props, 'ui'), dialogUI)
+
 </script>
 
 <template>
   <Presence :present="forceMount || rootContext.open.value"
     :class="
     cn(
-      'fixed left-1/2 top-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 border border-muted bg-background p-4 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg',
-      dialogVariants({ size }),
+      'ui-dialog',
+      ui.base,
+      ui.rounded[currentSize],
+      // ui.gap[size],
+      ui.width[width],
+      ui.text[currentSize],
       props.class,
     )"
     >

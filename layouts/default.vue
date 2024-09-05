@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const navbar = useNavbar()
+const { activeNavMenu } = useNavbar()
 const { theme, radius } = useCustomize()
 
 useServerHead({
@@ -11,12 +11,18 @@ useServerHead({
 </script>
 
 <template>
-  <div :class="[
-      `grid min-h-dvh md:grid-cols-[auto_1fr] grid-rows-[4rem_auto] [grid-template-areas:'aside_header''aside_main']`,
-    ]">
-    <LazyLayoutHeader class="[grid-area:header] col-span-2" />
-    <LazyLayoutAside class="[grid-area:aside]" />
-    <main class="[grid-area:main] bg-foreground/[0.05] p-4">
+  <div :class="cn(
+      `max-w-[132rem] mx-auto shadow-[0_0_0_100vmax_hsl(var(--foreground)_/_0.02)] md:pl-[8rem] pt-10 transition-[padding-left]`,
+      { 'md:pl-[27.2rem]' : true },
+      { 'text-[blue]]' : !!activeNavMenu?.children?.length },
+    )">
+    <LazyLayoutHeader :class="cn(
+      'md:pl-[8rem] transition-[padding-left]',
+      { 'md:pl-[27.2rem]' : !!activeNavMenu?.children?.length }
+    )" />
+    <LazyLayoutAside class="" />
+    <main class="bg-foreground/[0.05] py-4 px-6 min-h-[calc(100dvh_-_4rem)]">
+      <div class="ms-[50vw]">{{ activeNavMenu?.children?.length }}</div>
       <slot />
     </main>
   </div>

@@ -1,12 +1,9 @@
-<script lang="ts">
-import type { PrimitiveProps } from '../Primitive'
-import { useForwardExpose } from '../../shared'
-
-export interface DialogTitleProps extends PrimitiveProps {}
-</script>
-
 <script setup lang="ts">
-import { injectDialogRootContext } from './DialogRoot.vue'
+import { useForwardExpose } from '../../shared'
+import {
+  injectDialogRootContext,
+  type DialogTitleProps
+} from './types'
 import { Primitive } from '../Primitive'
 
 const props = withDefaults(defineProps<DialogTitleProps>(), { as: 'h2' })
@@ -18,6 +15,7 @@ useForwardExpose()
   <Primitive
     v-bind="props"
     :id="rootContext.titleId"
+    class="ui-dialog-title"
   >
     <slot />
   </Primitive>

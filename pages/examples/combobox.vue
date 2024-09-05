@@ -51,8 +51,8 @@ const size = ref()
     </ComboboxAnchor>
 
     <ComboboxContent>
-      <ComboboxViewport class="p-[5px]">
-        <ComboboxEmpty class="text-mauve8 text-xs font-medium text-center py-2" />
+      <ComboboxViewport>
+        <ComboboxEmpty/>
 
         <ComboboxGroup>
           <ComboboxLabel >
@@ -71,7 +71,7 @@ const size = ref()
               {{ option }}
             </span>
           </ComboboxItem>
-          <ComboboxSeparator class="h-[1px] bg-grass6 m-[5px]" />
+          <ComboboxSeparator />
         </ComboboxGroup>
 
         <ComboboxGroup>

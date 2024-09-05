@@ -27,9 +27,9 @@ const sizes = computed(() => scrollbarVisibleContext.sizes.value)
     data-orientation="horizontal"
     :style="{
       bottom: 0,
-      left: rootContext.dir.value === 'rtl' ? 'var(--radix-scroll-area-corner-width)' : 0,
-      right: rootContext.dir.value === 'ltr' ? 'var(--radix-scroll-area-corner-width)' : 0,
-      ['--radix-scroll-area-thumb-width' as any]: sizes ? `${getThumbSize(sizes)}px` : undefined,
+      left: rootContext.dir.value === 'rtl' ? 'var(--ui-scroll-area-corner-width)' : 0,
+      right: rootContext.dir.value === 'ltr' ? 'var(--ui-scroll-area-corner-width)' : 0,
+      ['--ui-scroll-area-thumb-width' as any]: sizes ? `${getThumbSize(sizes)}px` : undefined,
     }"
     @on-drag-scroll="scrollbarVisibleContext.onDragScroll($event.x)"
   >

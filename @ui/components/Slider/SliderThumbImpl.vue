@@ -63,7 +63,7 @@ onUnmounted(() => {
       :as-child="asChild"
       :as="as"
       :style="{
-        transform: 'var(--radix-slider-thumb-transform)',
+        transform: 'var(--ui-slider-thumb-transform)',
         position: 'absolute',
         [orientation!.startEdge]: `calc(${percent}% + ${thumbInBoundsOffset}px)`,
         /**

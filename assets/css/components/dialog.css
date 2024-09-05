@@ -1,0 +1,74 @@
+.ui-dialog {
+  /* --px: theme(spacing[3]); */
+  /* --py: theme(spacing[2]); */
+
+  @apply fixed left-1/2 top-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2;
+  @apply border border-border bg-background;
+  @apply duration-200;
+  /* @apply p-[var(--px)]; */
+
+  &[data-state="open"] {
+    @apply animate-in fade-in-0 zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-[48%]
+  }
+  &[data-state="close"] {
+    @apply animate-out fade-out-0 zoom-out-95 slide-out-to-left-1/2 slide-out-to-top-[48%]
+  }
+
+  /* &[size="xs"] {
+    --px: theme(spacing[2]);
+    --py: theme(spacing[1.5]);
+    @apply p-2 shadow-lg
+  }
+
+  &[size="sm"] {
+    --px: theme(spacing[2.5]);
+    --py: 0.7rem;
+    @apply p-3 shadow-lg
+  }
+
+  &[size="default"] {
+    @apply p-4 shadow-lg
+  }
+
+  &[size="md"] {
+    --px: theme(spacing[3.5]);
+    --py: 0.9rem;
+    @apply p-5 shadow-lg
+  }
+
+  &[size="lg"] {
+    --px: theme(spacing[4]);
+    --py: theme(spacing[2.5]);
+    @apply p-6 shadow-lg
+  } */
+  &-overlay {
+    @apply fixed inset-0 z-50 bg-black/80;
+    &[data-state="open"] {
+      @apply animate-in fade-in-0;
+    }
+    &[data-state="closed"] {
+      @apply animate-out fade-out-0;
+    }
+  }
+  &-header {
+    @apply flex flex-col gap-y-2
+  }
+  &-title {
+    @apply flex gap-[0.5em];
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    .icon {
+      width: calc(var(--title-line-height) * 1em);
+      height: calc(var(--title-line-height) * 1em);
+    }
+  }
+  &-description {
+    @apply text-muted-foreground;
+    font-size: var(--sub-title-font-size);
+    line-height: var(--sub-title-line-height)
+  }
+  &-content {
+    font-size: var(--font-size);
+    line-height: var(--line-height)
+  }
+}

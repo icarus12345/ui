@@ -1,0 +1,44 @@
+.ui-accordion {
+
+  &__content {
+    @apply overflow-hidden data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown bg-foreground/[0.02];
+  }
+  &__header {
+
+  }
+  &__item {
+    @apply mt-px first:mt-0 first:rounded-t last:rounded-b ui-focus-within;
+    .ui-accordion__trigger {
+      @apply w-full outline-none flex items-center justify-center ui-hovered bg-foreground/[0.05];
+    }
+    &[data-state=open] {
+      .ui-accordion__trigger {
+        @apply rounded-b-none;
+      }
+    }
+    &:not(:first-child):not(:last-child) {
+      .ui-accordion__trigger {
+        @apply rounded-none;
+      }
+    }
+    &:not(:first-child) {
+      .ui-accordion__trigger {
+        /* @apply shadow-[0_-1px_0_hsl(var(--border))]; */
+      }
+    }
+    &:first-child {
+      .ui-accordion__trigger {
+        @apply rounded-b-none;
+      }
+    }
+    &:last-child {
+      .ui-accordion__trigger {
+        @apply rounded-t-none;
+      }
+      .ui-accordion__content{
+        @apply rounded-b-[inherit]
+      }
+    }
+  }
+  
+}

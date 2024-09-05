@@ -24,7 +24,7 @@ function handleSelectLink(link: string) {
 </script>
 
 <template>
-  <Button variant="outline" size="sm" class="w-full flex-1 justify-between h-8 gap-1 font-normal md:w-56 md:flex-initial md:gap-3" @click="openCommand = !openCommand">
+  <Button variant="outline" @click="openCommand = !openCommand">
     <span class="hidden sm:inline-flex">Search documentation</span>
     <span class="sm:hidden">Search...</span>
     <BaseKbd>

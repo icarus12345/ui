@@ -1,11 +1,8 @@
-<script lang="ts">
-import type { PrimitiveProps } from '../Primitive'
-
-export interface DialogOverlayImplProps extends PrimitiveProps {}
-</script>
-
 <script setup lang="ts">
-import { injectDialogRootContext } from './DialogRoot.vue'
+import {
+  injectDialogRootContext,
+  type DialogOverlayImplProps,
+} from './types'
 import { Primitive } from '../Primitive'
 import { useBodyScrollLock, useForwardExpose } from '../../shared'
 

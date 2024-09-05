@@ -47,7 +47,7 @@ export const iconVariants = cva(
 )
 
 export const menuItemVariants = cva(
-  'relative gap-1 flex items-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none ui-disable text-foreground ui-focused',
+  'relative gap-1 flex items-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none ui-disable text-foreground ui-focused rounded ui-highlighted',
   config,
 )
 

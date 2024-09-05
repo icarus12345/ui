@@ -1,3 +1,5 @@
 <template>
-  Home
+  <ul>
+    <li>Home</li>
+  </ul>
 </template>

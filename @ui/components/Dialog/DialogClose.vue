@@ -1,11 +1,9 @@
-<script lang="ts">
-import type { PrimitiveProps } from '../Primitive'
-
-export interface DialogCloseProps extends PrimitiveProps {}
-</script>
 
 <script setup lang="ts">
-import { injectDialogRootContext } from './DialogRoot.vue'
+import { 
+  type DialogCloseProps,
+  injectDialogRootContext,
+} from './types'
 import { useForwardExpose } from '../../composables/useForwardExpose'
 import { Primitive } from '../Primitive'
 
@@ -22,6 +20,7 @@ const rootContext = injectDialogRootContext()
     v-bind="props"
     :type="as === 'button' ? 'button' : undefined"
     @click="rootContext.onOpenChange(false)"
+    class="dialog-close"
   >
     <slot />
   </Primitive>

@@ -1,44 +1,12 @@
-<script lang="ts">
-import type {
-  DismissableLayerEmits,
-  DismissableLayerProps,
-} from '../DismissableLayer'
-// import { useForwardExpose, useId } from '../../shared'
-
-export type DialogContentImplEmits = DismissableLayerEmits & {
-  /**
-   * Event handler called when auto-focusing on open.
-   * Can be prevented.
-   */
-  openAutoFocus: [event: Event]
-  /**
-   * Event handler called when auto-focusing on close.
-   * Can be prevented.
-   */
-  closeAutoFocus: [event: Event]
-}
-
-export interface DialogContentImplProps extends DismissableLayerProps {
-  /**
-   * Used to force mounting when more control is needed. Useful when
-   * controlling transntion with Vue native transition or other animation libraries.
-   */
-  forceMount?: boolean
-  /**
-   * When `true`, focus cannot escape the `Content` via keyboard,
-   * pointer, or a programmatic focus.
-   * @defaultValue false
-   */
-  trapFocus?: boolean
-}
-</script>
-
 <script setup lang="ts">
-import { injectDialogRootContext } from './DialogRoot.vue'
+import { 
+  type DialogContentImplProps,
+  type DialogContentImplEmits,
+  injectDialogRootContext
+} from './types'
 import { DismissableLayer } from '../DismissableLayer'
 import { FocusScope } from '../FocusScope'
 import { getOpenState } from '../Menu/utils'
-import { useWarning } from './utils'
 import { onMounted } from 'vue'
 
 const props = defineProps<DialogContentImplProps>()
@@ -58,16 +26,7 @@ onMounted(() => {
     rootContext.triggerElement.value = document.activeElement as HTMLElement
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  useWarning({
-    titleName: 'DialogTitle',
-    contentName: 'DialogContent',
-    componentLink: 'dialog.html#title',
-    titleId: rootContext.titleId,
-    descriptionId: rootContext.descriptionId,
-    contentElement: rootContext.contentElement,
-  })
-}
+
 </script>
 
 <template>

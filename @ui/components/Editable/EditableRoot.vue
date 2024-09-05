@@ -2,7 +2,7 @@
 import type { PrimitiveProps } from '../Primitive'
 // import { createContext, useDirection, useFormControl } from '../../shared'
 import type { Direction } from '@ui/types'
-import { useFocusOutside, usePointerDownOutside } from '../DismissableLayer'
+import { useFocusOutside, usePointerDownOutside } from '../DismissableLayer/utils'
 
 type ActivationMode = 'focus' | 'dblclick' | 'none'
 type SubmitMode = 'blur' | 'enter' | 'none' | 'both'

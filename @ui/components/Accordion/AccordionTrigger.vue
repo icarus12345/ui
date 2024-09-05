@@ -7,11 +7,14 @@ export interface AccordionTriggerProps extends PrimitiveProps {}
 // import { useId } from '../../composables/useId'
 import { injectAccordionItemContext } from './AccordionItem.vue'
 import { injectAccordionRootContext } from './AccordionRoot.vue'
-import { type Variants, accordionTriggerVariants } from '@ui/shared/variants'
+// import { type Variants, baseVariants } from '@ui/shared/variants'
 import { CollapsibleTrigger } from '../Collapsible'
+import accordionUI from './utils'
+import type { HTMLAttributes } from 'vue'
 
 const props = defineProps<AccordionTriggerProps & {
   class?: HTMLAttributes['class'],
+  ui?: object
 }>()
 
 const rootContext = injectAccordionRootContext()
@@ -23,6 +26,11 @@ function changeItem() {
     return
   rootContext.changeModelValue(itemContext.value.value)
 }
+const { ui }: any = useUI(toRef(props, 'ui'), accordionUI.trigger)
+const uiSize: any = inject('ui-size', undefined)
+const currentSize = computed(() => {
+  return uiSize?.value
+})
 </script>
 
 <template>
@@ -40,8 +48,14 @@ function changeItem() {
     :disabled="itemContext.disabled.value"
     @click="changeItem"
     :class="cn(
-      'w-full outline-none flex items-center justify-center shadow-[0_1px_0_hsl(var(--border))] rounded-none ui-hovered',
-      accordionTriggerVariants({ variant: rootContext.variant.value, size: rootContext.size.value }),
+      'ui-accordion__trigger',
+      ui.base,
+      ui.padding[currentSize],
+      // baseVariants({
+      //   variant: rootContext.variant.value,
+      //   size: rootContext.size.value,
+      //   round: rootContext.size.value,
+      // }),
       props.class
     )"
   >

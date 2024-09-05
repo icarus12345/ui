@@ -81,7 +81,7 @@ const colorMode = useColorMode()
             class="justify-start gap-2"
             variant="outline"
             size="sm"
-            :class="{ 'border-primary border-2': theme === color }"
+            :class="{ 'border-primary': theme === color }"
             @click="setTheme(color)"
           >
             <span class="h-4 w-4 flex items-center justify-center rounded-full" :style="{ backgroundColor: backgroundColor(color) }">
@@ -100,7 +100,7 @@ const colorMode = useColorMode()
             class="justify-center gap-2"
             variant="outline"
             size="sm"
-            :class="{ 'border-primary border-2': radius === r }"
+            :class="{ 'border-primary': radius === r }"
             @click="setRadius(r)"
           >
             <span class="capitalize">{{ r }}</span>
@@ -115,7 +115,7 @@ const colorMode = useColorMode()
           class="justify-center gap-2"
           variant="outline"
           size="sm"
-          :class="{ 'border-primary border-2': colorMode.preference === 'light' }"
+          :class="{ 'border-primary': colorMode.preference === 'light' }"
           @click="colorMode.preference = 'light'"
         >
           <Icon name="i-ph-sun-dim-duotone" />
@@ -125,7 +125,7 @@ const colorMode = useColorMode()
           class="justify-center gap-2"
           variant="outline"
           size="sm"
-          :class="{ 'border-primary border-2': colorMode.preference === 'dark' }"
+          :class="{ 'border-primary': colorMode.preference === 'dark' }"
           @click="colorMode.preference = 'dark'"
         >
           <Icon name="i-ph-moon-stars-duotone" />
@@ -135,7 +135,7 @@ const colorMode = useColorMode()
           class="justify-center gap-2"
           variant="outline"
           size="sm"
-          :class="{ 'border-primary border-2': colorMode.preference === 'system' }"
+          :class="{ 'border-primary': colorMode.preference === 'system' }"
           @click="colorMode.preference = 'system'"
         >
           <Icon name="i-lucide-monitor" />

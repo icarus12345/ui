@@ -1,0 +1,22 @@
+/* .ui-dialog, */
+.ui-card {
+  @apply border-0 border-border bg-card text-card-foreground shadow-sm flex flex-col;
+  &-header {
+    @apply text-accent-foreground bg-accent/25;
+    &:not(:last-child) {
+      @apply rounded-b-none border-b-0
+    }
+  }
+  &-content {
+    @apply flex-1;
+  }
+  &-footer {
+    @apply text-accent-foreground bg-accent/25;
+    &:not(:first-child) {
+      @apply rounded-t-none border-t-0
+    }
+    &:not(:last-child) {
+      @apply border-b-0
+    }
+  }
+}

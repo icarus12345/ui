@@ -14,13 +14,15 @@ export const _useNavbar = () => {
   }
 
   const activeNavMenu = computed(() => {
-    return navMenu.filter((item: any) => {
+    const nav = navMenu.filter((item: any) => {
       const link = item.link || '/'
       if (link === '/') {
         return route.path === link
       }
-      return route.path.startsWith(item.link || '')
+      return route.path.startsWith(link || 'unknown')
     }).pop()
+    
+    return nav
   })
 
   watch(

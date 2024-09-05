@@ -22,6 +22,7 @@ export interface AccordionItemProps
    * A string value for the accordion item. All items within an accordion should use a unique value.
    */
   value: string
+  ui?: object
 }
 
 interface AccordionItemContext {
@@ -42,8 +43,11 @@ export const [injectAccordionItemContext, provideAccordionItemContext]
 <script setup lang="ts">
 import { CollapsibleRoot } from '../Collapsible'
 // import { computed } from 'vue'
+import accordionUI from './utils'
 
-const props = defineProps<AccordionItemProps& { class?: HTMLAttributes['class'] }>()
+const props = defineProps<AccordionItemProps& {
+  class?: HTMLAttributes['class'],
+}>()
 
 defineSlots<{
   default: (props: {
@@ -101,6 +105,7 @@ function handleArrowKey(e: KeyboardEvent) {
     },
   )
 }
+const { ui }: any = useUI(toRef(props, 'ui'), accordionUI.item)
 </script>
 
 <template>
@@ -113,7 +118,11 @@ function handleArrowKey(e: KeyboardEvent) {
     :as="props.as"
     :as-child="props.asChild"
     @keydown.up.down.left.right.home.end="handleArrowKey"
-    :class="cn('mt-px first:mt-0 first:rounded-t last:rounded-b ui-focus-within', props.class)"
+    :class="cn(
+      'ui-accordion__item',
+      ui.base,
+      props.class
+      )"
   >
     <slot :open="open" />
   </CollapsibleRoot>

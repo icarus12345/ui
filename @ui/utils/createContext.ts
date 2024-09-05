@@ -33,9 +33,8 @@ export function createContext<ContextValue>(
     if (context)
       return context
 
-    if (context === null)
+    if (!context)
       return context as any
-
     throw new Error(
       `Injection \`${injectionKey.toString()}\` not found. Component must be used within ${
         Array.isArray(providerComponentName)

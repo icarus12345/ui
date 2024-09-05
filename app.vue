@@ -7,5 +7,6 @@ const useIdFunction = () => useId()
     <NuxtLayout vaul-drawer-wrapper>
       <NuxtPage />
     </NuxtLayout>
+    <DialogProvider />
   </ConfigProvider>
 </template>

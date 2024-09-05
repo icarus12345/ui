@@ -3,8 +3,8 @@ import type {
   DismissableLayerEmits,
   DismissableLayerProps,
   FocusOutsideEvent,
-} from '../DismissableLayer'
-import type { PointerDownOutsideEvent } from '../DismissableLayer/utils'
+  PointerDownOutsideEvent,
+} from '../DismissableLayer/types'
 
 type MotionAttribute = 'to-start' | 'to-end' | 'from-start' | 'from-end'
 

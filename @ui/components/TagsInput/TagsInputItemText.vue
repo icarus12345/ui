@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<TagsInputItemTextProps>(), {
 const itemContext = injectTagsInputItemContext()
 useForwardExpose()
 
-itemContext.textId ||= useId(undefined, 'ui-tags-input-item-text')
+itemContext.textId ||= useId()
 </script>
 
 <template>

@@ -8,7 +8,7 @@ import {
   useHideOthers,
 } from '../../shared'
 
-import type { DismissableLayerEmits, DismissableLayerProps } from '../DismissableLayer'
+import type { DismissableLayerEmits, DismissableLayerProps } from '../DismissableLayer/types'
 import type { PopperContentProps } from '../Popper'
 
 export type ComboboxContentImplEmits = DismissableLayerEmits

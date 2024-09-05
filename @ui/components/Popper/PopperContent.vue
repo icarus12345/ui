@@ -331,7 +331,7 @@ providePopperContentContext({
       transform: isPositioned ? floatingStyles.transform : 'translate(0, -200%)', // keep off the page when measuring
       minWidth: 'max-content',
       zIndex: contentZIndex,
-      ['--radix-popper-transform-origin' as any]: [
+      ['--ui-popper-transform-origin' as any]: [
         middlewareData.transformOrigin?.x,
         middlewareData.transformOrigin?.y,
       ].join(' '),

@@ -39,7 +39,7 @@ const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
               </SelectItemText>
             </SelectItem>
           </SelectGroup>
-          <SelectSeparator class="h-[1px] bg-green6 m-[5px]" />
+          <SelectSeparator />
           <SelectLabel>
             Vegetables
           </SelectLabel>
